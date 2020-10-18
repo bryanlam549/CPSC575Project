@@ -1,13 +1,30 @@
-//
+/*The SceneDelegate will be responsible for what is shown on the screen (Windows or Scenes) handle and manage the way your app is shown. (Windows or Scenes) handle and manage the way your app is shown.
+ 
+ 6 Important methods
+
+     1. scene(_:willConnectTo:options:)
+        -This method will creates new UIWindow, sets the root view controller and makes this window the key window to be displayed.
+     2. sceneDidDisconnect(_:)
+        -This is the interesting method of all the methods. When ever the scene is sent to background, iOS might decide to completely discard the scene to free up the resources. This doesn’t meant that the app is killed or not running, but just the scene is disconnected from the session and is not active. iOS can decide to reconnect back this scene to scene session when the user brings that particular scene to foreground again . This method can be used to discard any resources that aren’t used anymore.
+     3. sceneDidBecomeActive(_:) & sceneDidEnterBackground(_:)
+        -This method is called right after the WillEnterForeground method and here the scene is set-up and visible and ready to use.
+     4. sceneWillResignActive(_:)
+        -These methods are called when app stages to backgground .
+     5. sceneWillEnterForeground(_:)
+        -This method is called when the scene is about to start like when app becomes active for the first time or when transitions from background to foreground.
+
+     
+*/
+
 //  SceneDelegate.swift
 //  CPSC575Project
 //
 //  Created by bryan lam on 2020-09-29.
 //  Copyright © 2020 bryan lam. All rights reserved.
-//
 
 import UIKit
 import SwiftUI
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
-
+        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

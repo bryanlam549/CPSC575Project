@@ -10,38 +10,63 @@
 import SwiftUI
 
 struct ContentView: View {
-    //hardcoded data
-    //let data = testData
-    
-    @ObservedObject private var viewModel = VMtest()
-    
-    var newCollection = TestCollection(col1: "test", col2: "test", column3: 9)
-    
-    
-    var body: some View {
-        VStack {
-            Text("TEST LIST")
-            List(viewModel.testCollections){ testCol in
-                Text(testCol.col1)
-            }
-            .onAppear(){
-                self.viewModel.fetchData()
-            }
-            
-            Button(action: {self.viewModel.addData(collection: self.newCollection)}) {
-                
-                Text("Add hardcoded values...")
-                
-            }
 
-        }
-        
-        
-    }
+	
+	
+	@State private var selection = 0
+	var body: some View {
+		TabView(selection: $selection){
+			ProfileView()
+				.font(.title)
+				.tabItem {
+					VStack {
+						Image(systemName: "circle")
+						Text("Profile")
+					}
+			}
+			.tag(0)
+			
+			
+			
+			MatchView()
+				.font(.title)
+				.tabItem {
+					VStack {
+						Image(systemName: "heart")
+						Text("Heart")
+					}
+			}
+			.tag(1)
+			
+			
+			
+			MessageView()
+				.font(.title)
+				.tabItem {
+					VStack {
+						Image(systemName: "square")
+						Text("Messages")
+					}
+			}
+			.tag(2)
+			
+			TestView()
+				.font(.title)
+				.tabItem {
+					VStack {
+						Image(systemName: "rectangle")
+						Text("Test!!")
+					}
+			}
+			.tag(3)
+		}
+	}
 }
 
+
+//Provides preview screen
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+	static var previews: some View {
+		ContentView()
+	}
 }
