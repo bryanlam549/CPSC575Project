@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct TestView: View {
     //hardcoded data
     //let data = testData
@@ -32,8 +33,6 @@ struct TestView: View {
                 Text("Add hardcoded values...")
                 
             }
-            
-            
         }
         
     }
@@ -41,3 +40,9 @@ struct TestView: View {
 
 
 
+
+struct TestView_Previews: PreviewProvider {
+    static var previews: some View {
+        TestView()
+    }
+}
