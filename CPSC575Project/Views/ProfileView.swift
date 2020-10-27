@@ -7,10 +7,28 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ProfileView: View {
+    @EnvironmentObject var model: LoginSignUpModel // for testing
     
     var body: some View {
-        Text("Profile View")
+        VStack{
+            Text("Profile View")
+            //Log out button TESTING
+            Button(action:{
+                //THIS IS A TEST...But this is how you'd sign out
+                self.model.logOut()
+            }){
+                Text("Sign out")
+            }
+        }
+        
+    }
+}
+
+struct ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileView()
     }
 }

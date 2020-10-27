@@ -14,3 +14,9 @@ struct MatchView: View {
         Text("Matching view")
     }
 }
+
+struct MatchView_Previews: PreviewProvider {
+    static var previews: some View {
+        MatchView()
+    }
+}
