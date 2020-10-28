@@ -18,9 +18,16 @@ struct TestView: View {
     
     //Hardcoded test values
     var newCollection = TestCollection(col1: "test", col2: "test", column3: 9)
+    @EnvironmentObject var model: LoginSignUpModel // for testing
     var body: some View {
         VStack {
             Text("TEST LIST")
+            Button(action:{
+                //THIS IS A TEST...But this is how you'd sign out
+                self.model.logOut()
+            }){
+                Text("Sign out")
+            }
             List(viewModel.testCollections){ testCol in
                 Text(testCol.col1)
             }
