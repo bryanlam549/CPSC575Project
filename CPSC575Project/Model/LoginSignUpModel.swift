@@ -24,7 +24,7 @@ class LoginSignUpModel : ObservableObject{
     @Published var alertMsg = ""
     
     // User Status....
-    @Published var logInstatus = false
+    @Published var logInstatus = (FirebaseAuth.Auth.auth().currentUser != nil)
     
     func login(){
 

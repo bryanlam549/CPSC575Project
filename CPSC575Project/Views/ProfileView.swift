@@ -31,7 +31,7 @@
                                         Spacer()
                                         HStack {
                                             Spacer()
-                                            Button(action: profileEditButtonTapped) {
+                                            Button(action: self.profileEditButtonTapped) {
                                                 Text("Edit")
                                             }
                                         }
