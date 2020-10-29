@@ -11,6 +11,13 @@
 		7E4DB958254A06ED002619A4 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DB957254A06ED002619A4 /* TopView.swift */; };
 		7E4DB95B254A070A002619A4 /* TopTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DB95A254A070A002619A4 /* TopTitle.swift */; };
 		7E4DB95E254A0726002619A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4DB95D254A0726002619A4 /* Assets.xcassets */; };
+		7EDB73AB254B4CDE00128CF3 /* ListTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73AA254B4CDE00128CF3 /* ListTitleView.swift */; };
+		7EDB73AE254B4DBC00128CF3 /* MatchingPersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73AD254B4DBC00128CF3 /* MatchingPersonDetailView.swift */; };
+		7EDB73B1254B4E1800128CF3 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B0254B4E1800128CF3 /* MessageCell.swift */; };
+		7EDB73B4254B4EBC00128CF3 /* MessagesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B3254B4EBC00128CF3 /* MessagesCellModel.swift */; };
+		7EDB73B7254B506E00128CF3 /* NewMatchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */; };
+		7EDB73BA254B50D500128CF3 /* NewMatchesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */; };
+		7EDB73BD254B515A00128CF3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73BC254B515A00128CF3 /* MainTabView.swift */; };
 		9359653625230FF7002E8593 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359653525230FF7002E8593 /* TestModel.swift */; };
 		93596538252310B9002E8593 /* VMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93596537252310B9002E8593 /* VMTest.swift */; };
 		937E6FE0253D48900015004F /* MsgBubbleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937E6FDF253D48900015004F /* MsgBubbleModel.swift */; };
@@ -38,6 +45,13 @@
 		7E4DB957254A06ED002619A4 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		7E4DB95A254A070A002619A4 /* TopTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTitle.swift; sourceTree = "<group>"; };
 		7E4DB95D254A0726002619A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7EDB73AA254B4CDE00128CF3 /* ListTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTitleView.swift; sourceTree = "<group>"; };
+		7EDB73AD254B4DBC00128CF3 /* MatchingPersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingPersonDetailView.swift; sourceTree = "<group>"; };
+		7EDB73B0254B4E1800128CF3 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		7EDB73B3254B4EBC00128CF3 /* MessagesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCellModel.swift; sourceTree = "<group>"; };
+		7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesCell.swift; sourceTree = "<group>"; };
+		7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesCellModel.swift; sourceTree = "<group>"; };
+		7EDB73BC254B515A00128CF3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		9359653525230FF7002E8593 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		93596537252310B9002E8593 /* VMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMTest.swift; sourceTree = "<group>"; };
 		937E6FDF253D48900015004F /* MsgBubbleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgBubbleModel.swift; sourceTree = "<group>"; };
@@ -164,6 +178,13 @@
 				7E4DB957254A06ED002619A4 /* TopView.swift */,
 				7E4DB95A254A070A002619A4 /* TopTitle.swift */,
 				7E4DB95D254A0726002619A4 /* Assets.xcassets */,
+				7EDB73AA254B4CDE00128CF3 /* ListTitleView.swift */,
+				7EDB73AD254B4DBC00128CF3 /* MatchingPersonDetailView.swift */,
+				7EDB73B0254B4E1800128CF3 /* MessageCell.swift */,
+				7EDB73B3254B4EBC00128CF3 /* MessagesCellModel.swift */,
+				7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */,
+				7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */,
+				7EDB73BC254B515A00128CF3 /* MainTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,19 +333,26 @@
 				9388B940253CE16E00F01654 /* TestView.swift in Sources */,
 				7E4DB958254A06ED002619A4 /* TopView.swift in Sources */,
 				9388B966253CE43D00F01654 /* ProfileView.swift in Sources */,
+				7EDB73B4254B4EBC00128CF3 /* MessagesCellModel.swift in Sources */,
 				93596538252310B9002E8593 /* VMTest.swift in Sources */,
 				9394CE412548083D00121D5F /* LoginSignUpModel.swift in Sources */,
 				937E6FE0253D48900015004F /* MsgBubbleModel.swift in Sources */,
 				9388B964253CE43000F01654 /* MatchView.swift in Sources */,
 				93AE5AB22523056700F8C49A /* AppDelegate.swift in Sources */,
+				7EDB73BD254B515A00128CF3 /* MainTabView.swift in Sources */,
 				93AE5AB42523056700F8C49A /* SceneDelegate.swift in Sources */,
 				93AE5AB62523056700F8C49A /* ContentView.swift in Sources */,
+				7EDB73B1254B4E1800128CF3 /* MessageCell.swift in Sources */,
 				9388B962253CE41200F01654 /* MessageView.swift in Sources */,
+				7EDB73AB254B4CDE00128CF3 /* ListTitleView.swift in Sources */,
 				7E4DB955254A06D2002619A4 /* AppView.swift in Sources */,
 				9359653625230FF7002E8593 /* TestModel.swift in Sources */,
+				7EDB73BA254B50D500128CF3 /* NewMatchesCellModel.swift in Sources */,
+				7EDB73B7254B506E00128CF3 /* NewMatchesCell.swift in Sources */,
 				93FEBF0A2546258B00FD5D04 /* LoginSignUpView.swift in Sources */,
 				7E4DB95B254A070A002619A4 /* TopTitle.swift in Sources */,
 				93FEBEE32545F31A00FD5D04 /* User.swift in Sources */,
+				7EDB73AE254B4DBC00128CF3 /* MatchingPersonDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
