@@ -43,31 +43,32 @@ class LoginSignUpModel : ObservableObject{
                 self.alert.toggle()
                 return
             }
+            
+            // checking if user is verifed or not...
+            // if not verified means lgging out...
+            
+            let user = Auth.auth().currentUser
+            
+            if user == nil{
+                return
+            }
+            
+            if !user!.isEmailVerified{
+                self.alertMsg = "Please Verify Email Address!!!"
+                self.alert.toggle()
+                // logging out...
+                try! Auth.auth().signOut()
+                
+                return
+            }
+            
+            withAnimation{
+                self.logInstatus = true
+            }
+            
         })
         
-        // checking if user is verifed or not...
-        // if not verified means lgging out...
         
-        let user = Auth.auth().currentUser
-        
-        if user == nil{
-            return
-        }
-        
-        if !user!.isEmailVerified{
-            
-            self.alertMsg = "Please Verify Email Address!!!"
-            self.alert.toggle()
-            // logging out...
-            try! Auth.auth().signOut()
-            
-            return
-        }
-        
-        //Set login status to true
-        withAnimation{
-            self.logInstatus = true
-        }
     
     }
     func signUp(){
