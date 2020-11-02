@@ -13,7 +13,7 @@ import Firebase
 
 struct LoginView: View{
     @EnvironmentObject var model: LoginSignUpModel
-    
+    @State var hidepass = true
     var body: some View{
         VStack{
             HStack(spacing: 15){
@@ -23,9 +23,13 @@ struct LoginView: View{
             Divider()
             
             HStack(spacing: 15){
-                SecureField("Enter Password", text: $model.pass)
+                if (hidepass){
+                    SecureField("Enter Password", text: $model.pass)
+                }else{
+                    TextField(model.pass, text: $model.pass)
+                }
                 Button(action:{
-                    
+                    self.hidepass.toggle()
                 }){
                     Image(systemName: "eye")
                 }
@@ -37,17 +41,33 @@ struct LoginView: View{
                 Text("LOGIN")
             }
             
+            Divider()
+ 
+            
+            Button(action:{
+                self.model.resetPassword()
+            }){
+                Text("Forget Password?")
+                .fontWeight(.bold)
+            }
+            
+            
         }
         .padding(.vertical)
         .padding(.horizontal,20)
         .cornerRadius(10)
+        // Alerts...
+        .alert(isPresented: $model.alert, content: {
+            Alert(title: Text("Message"), message: Text(model.alertMsg), dismissButton: .destructive(Text("Ok")))
+        })
     }
     
 }
 
 struct SignUpView: View{
     @EnvironmentObject var model: LoginSignUpModel
-    
+    @State var hidepass1 = true
+    @State var hidepass2 = true
     var body: some View{
         VStack{
             HStack(spacing: 15){
@@ -57,9 +77,13 @@ struct SignUpView: View{
             Divider()
             
             HStack(spacing: 15){
-                SecureField("Enter Password", text: $model.password_SignUp)
+                if(hidepass1){
+                    SecureField("Enter Password", text: $model.password_SignUp)
+                }else{
+                    TextField(self.model.password_SignUp, text: $model.password_SignUp)
+                }
                 Button(action:{
-                    
+                    self.hidepass1.toggle()
                 }){
                     Image(systemName: "eye")
                 }
@@ -68,9 +92,13 @@ struct SignUpView: View{
             Divider()
             
             HStack(spacing: 15){
-                SecureField("Re-Enter Pass", text: $model.reEnterPassword)
+                if(hidepass2){
+                    SecureField("Re-Enter Pass", text: $model.reEnterPassword)
+                }else{
+                    TextField(self.model.reEnterPassword, text: $model.reEnterPassword)
+                }
                 Button(action:{
-                    
+                    self.hidepass2.toggle()
                 }){
                     Image(systemName: "eye")
                 }
@@ -85,6 +113,23 @@ struct SignUpView: View{
         .padding(.vertical)
         .padding(.horizontal,20)
         .cornerRadius(10)
+        // Alerts...
+        .alert(isPresented: $model.alert, content: {
+            
+            Alert(title: Text("Message"), message: Text(model.alertMsg), dismissButton: .destructive(Text("Ok"), action: {
+                 
+                // if email link sent means closing the signupView....
+                
+                if self.model.alertMsg == "Email Verification Has Been Sent !!! Verify Your Email ID !!!"{
+                    
+                    self.model.isSignUp.toggle()
+                    self.model.email_SignUp = ""
+                    self.model.password_SignUp = ""
+                    self.model.reEnterPassword = ""
+                }
+                
+            }))
+        })
     }
     
     
