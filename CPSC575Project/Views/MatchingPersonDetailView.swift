@@ -34,12 +34,14 @@ struct MatchingPersonDetailView: View {
                 
                 HStack(alignment: .bottom) {
                     Spacer()
+                  
                     Button(action: self.dislikeButtonTapped) {
                         Image(systemName: "hand.thumbsdown")
                             .font(.largeTitle)
                             .foregroundColor(.red)
                     }
                     Spacer()
+
                     Button(action: self.likeButtonTapped) {
                         Image(systemName: "hand.thumbsup")
                             .font(.largeTitle)
