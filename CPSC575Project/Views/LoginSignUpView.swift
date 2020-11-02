@@ -63,7 +63,6 @@ struct LoginView: View{
                     
                 }.background(Color.white)
                 .clipShape(Circle())
-                .padding(.leading, 25)
             }
             
             Button(action:{
