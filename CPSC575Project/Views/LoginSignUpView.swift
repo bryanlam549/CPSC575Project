@@ -42,7 +42,28 @@ struct LoginView: View{
             }
             
             Divider()
- 
+            
+            HStack{
+                Button(action: {
+                    
+                }) {
+                    Image("fb")
+                        .renderingMode(.original)
+                        .padding()
+                    
+                }.background(Color.white)
+                .clipShape(Circle())
+                
+                Button(action: {
+                    
+                }) {
+                    Image("google")
+                        .renderingMode(.original)
+                        .padding()
+                    
+                }.background(Color.white)
+                .clipShape(Circle())
+            }
             
             Button(action:{
                 self.model.resetPassword()
@@ -50,6 +71,7 @@ struct LoginView: View{
                 Text("Forget Password?")
                 .fontWeight(.bold)
             }
+            
             
             
         }
