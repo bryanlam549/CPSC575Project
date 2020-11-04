@@ -16,6 +16,7 @@ struct MatchView: View {
         
         ZStack{
             Color("LightWhite").edgesIgnoringSafeArea(.all)
+            Loader()
             VStack{
                 TopMatchView()
                 SwipeMatchView()
@@ -124,6 +125,30 @@ struct SwipeMatchView : View{
                 }
             }
         }
+    }
+}
+
+/*struct SwipeDetailsView : View {
+    var name = ""
+    var age = ""
+    var image = ""
+    
+    var body : some View {
+        ZStack{
+            
+        }
+    }
+}*/
+
+struct Loader : UIViewRepresentable {
+    func makeUIView(context: UIViewRepresentableContext<Loader>) -> Loader.UIViewType {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.startAnimating()
+        return indicator
+    }
+    
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<Loader>) {
+        
     }
 }
 
