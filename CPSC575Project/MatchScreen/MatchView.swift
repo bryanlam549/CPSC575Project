@@ -11,11 +11,14 @@ import Firebase
 import SDWebImageSwiftUI
 
 struct MatchView: View {
-    
+    @ObservedObject var obs = observer()
     var body: some View {
         
         ZStack{
             Color("LightWhite").edgesIgnoringSafeArea(.all)
+            if obs.users.isEmpty{
+                Loader()
+            }
             Loader()
             VStack{
                 TopMatchView()
@@ -119,26 +122,66 @@ struct SwipeMatchView : View{
         
         GeometryReader{geo in
             ZStack{
-                ForEach(self.obser.users){i in
-                    
-                    AnimatedImage(url: URL(string: i.image)!).resizable().frame(height: geo.size.height - 100).cornerRadius(20).padding(.horizontal, 15)
+                ForEach(self.obser.users) {i in
+                    SwipeDetailsView(name: i.name, age: i.age, image: i.image, height: geo.size.height - 100).gesture(DragGesture()
+                        
+                        .onChanged({ (value) in
+                            if value.translation.width > 0 {
+                                self.obser.update(id: i, value: value.translation.width, degree: 8)
+                            }
+                            else{
+                                self.obser.update(id: i, value: value.translation.width, degree: -8)
+                            }
+                        }).onEnded({ (value) in
+                            if i.swipe > 0{
+                                if i.swipe > geo.size.width / 2 - 80 {
+                                    self.obser.update(id: i, value: 500, degree: 0)
+                                }
+                                else{
+                                    self.obser.update(id: i, value: 0, degree: 0)
+                                }
+                            }
+                            else{
+                                if -i.swipe > geo.size.width / 2 - 80 {
+                                    self.obser.update(id: i, value: -500, degree: 0)
+                                }
+                                else{
+                                    self.obser.update(id: i, value: 0, degree: 0)
+                                }
+                            }
+                        })
+                    ).offset(x: i.swipe)
+                        .rotationEffect(.init(degrees: i.degree))
+                        .animation(.spring())
                 }
             }
         }
     }
 }
 
-/*struct SwipeDetailsView : View {
+struct SwipeDetailsView : View {
     var name = ""
     var age = ""
     var image = ""
+    var height : CGFloat = 0
     
     var body : some View {
         ZStack{
+            AnimatedImage(url: URL(string: image)!).resizable().cornerRadius(20).padding(.horizontal, 15)
             
-        }
+            VStack{
+                Spacer()
+                HStack{
+                    VStack(alignment: .leading, content: {
+                        Text(name).font(.system(size: 25)).fontWeight(.heavy).foregroundColor(.white)
+                        Text(age).foregroundColor(.white)
+                    })
+                    Spacer()
+                }
+            }.padding([.bottom, .leading], 35)
+        }.frame(height: height)
     }
-}*/
+}
 
 struct Loader : UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<Loader>) -> Loader.UIViewType {
@@ -169,11 +212,21 @@ class observer : ObservableObject{
                 let image = i.get("image") as! String
                 let id = i.documentID
                 
-                self.users.append(datatype(id: id, name: name, image: image, age: age, swipe: 0))
+                self.users.append(datatype(id: id, name: name, image: image, age: age, swipe: 0, degree: 0))
+            }
+        }
+    }
+    
+    func update(id : datatype, value : CGFloat, degree: Double){
+        for i in 0..<self.users.count{
+            if self.users[i].id == id.id{
+                self.users[i].swipe = value
+                self.users[i].degree = degree
             }
         }
     }
 }
+
 
 struct datatype : Identifiable {
     var id : String
@@ -181,4 +234,5 @@ struct datatype : Identifiable {
     var image : String
     var age : String
     var swipe : CGFloat
+    var degree : Double
 }
