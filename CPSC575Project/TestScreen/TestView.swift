@@ -28,6 +28,8 @@ struct TestView: View {
             }){
                 Text("Sign out")
             }
+            
+            
             List(viewModel.testCollections){ testCol in
                 Text(testCol.col1)
             }

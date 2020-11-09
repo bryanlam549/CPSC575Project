@@ -25,7 +25,7 @@ struct ChatRowView : View {
                             .bold()
                             .padding(10)
                             .foregroundColor(Color.white)
-                            .background(chatMessage.color)
+                            .background(Color.blue)
                             .cornerRadius(10)
                     }
                 }
@@ -37,7 +37,7 @@ struct ChatRowView : View {
                             .bold()
                             .foregroundColor(Color.white)
                             .padding(10)
-                            .background(chatMessage.color)
+                            .background(Color.red)
                         .cornerRadius(10)
                         Text(chatMessage.avatar)
                     }
