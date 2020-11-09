@@ -14,7 +14,7 @@ struct MessagesCell: View {
     var image: String
     var message: String
     var body: some View {
-        NavigationLink(destination: Text("test")){
+        NavigationLink(destination: ChatView()){
             HStack {
                 Image(image)
                     .resizable()
