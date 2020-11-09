@@ -10,22 +10,28 @@ import Foundation
 import SwiftUI
 
 struct NewMatchesCell: View {
+    var name: String
+    var image: String
+    
     var body: some View {
-        VStack(alignment: .center) {
-            Image("maleMock2")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 110, height: 110, alignment: .center)
-                .cornerRadius(55)
-            Text("Jerry Robinson")
-                .foregroundColor(.secondary)
-                .fontWeight(.bold)
+        NavigationLink(destination: Text("test")){
+            VStack(alignment: .center) {
+                Image(image)
+                    .resizable()
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 110, height: 110, alignment: .center)
+                    .cornerRadius(55)
+                Text(name)
+                    .foregroundColor(.secondary)
+                    .fontWeight(.bold)
+            }
         }
     }
 }
 
 struct NewMatchesCell_Previews: PreviewProvider {
     static var previews: some View {
-        NewMatchesCell()
+        NewMatchesCell(name: "maleMock2", image: "Jerry Robinson")
     }
 }
