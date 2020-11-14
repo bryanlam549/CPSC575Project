@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import SwiftUI
+import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -47,12 +48,17 @@ class VMChatRow : ObservableObject {
     }
     
     func fetchData(){
-           db.collection("chat").addSnapshotListener {(querySnapshot, error) in
+            let userId = Auth.auth().currentUser?.uid
+        
+        db.collection("chat")
+            .order(by: "createdTime", descending: false)
+            .whereField("userId", isEqualTo: userId as Any)
+            .addSnapshotListener {(querySnapshot, error) in
                guard let documents = querySnapshot?.documents else{
                    print("no documents")
                    return
                }
-               
+                
                //Using a compact map so whenever we return NIL this gets filtered out by the compact map
                self.messages = documents.compactMap{(queryDocumentSnapshot) -> ChatMessageModel? in
                    //need to provide class of struct we want to map into
@@ -62,7 +68,8 @@ class VMChatRow : ObservableObject {
            
                }
                
-           }
+        }
+           
        }
     
     
