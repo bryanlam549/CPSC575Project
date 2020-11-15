@@ -30,6 +30,11 @@ class VMChatRow : ObservableObject {
     
     @Published var messages = [ChatMessageModel]()
     private var db = Firestore.firestore()
+    var senderId: String
+    
+    init(senderId: String){
+        self.senderId = senderId
+    }
     
     // this function will be accessible from SwiftUI main view
     // here you can add the necessary code to send your messages not only to the SwiftUI view, but also to the database so that other users of the app would be able to see it
@@ -49,10 +54,11 @@ class VMChatRow : ObservableObject {
     
     func fetchData(){
             let userId = Auth.auth().currentUser?.uid
-        
+            
         db.collection("chat")
             .order(by: "createdTime", descending: false)
             .whereField("userId", isEqualTo: userId as Any)
+            .whereField("senderId", isEqualTo: senderId as Any)
             .addSnapshotListener {(querySnapshot, error) in
                guard let documents = querySnapshot?.documents else{
                    print("no documents")

@@ -15,7 +15,7 @@ struct MessagesCell: View {
     var image: String
     var message: String
     var body: some View {
-        NavigationLink(destination: ChatView(senderId: userId)){
+        NavigationLink(destination: ChatView(senderId: userId, chatController: VMChatRow(senderId: userId))){
             HStack {
                 Image(image)
                     .resizable()
