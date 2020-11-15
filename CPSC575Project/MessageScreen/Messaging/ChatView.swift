@@ -11,9 +11,11 @@ import SwiftUI
 
 struct ChatView : View {
     
+    var senderId: String
      // @State here is necessary to make the composedMessage variable accessible from different views
     @State var composedMessage: String = ""
-    @ObservedObject var chatController = VMChatRow()
+    @ObservedObject var chatController: VMChatRow// = VMChatRow(senderId: "1")
+    
     
     
     var body: some View {
@@ -42,7 +44,7 @@ struct ChatView : View {
                 TextField("Message...", text: $composedMessage).frame(minHeight: CGFloat(30))
                 // the button triggers the sendMessage() function written in the end of current View
                 Button(action: {
-                    self.chatController.sendMessage(ChatMessageModel(message: self.composedMessage, avatar: "C", isMe: true))
+                    self.chatController.sendMessage(ChatMessageModel(senderId: self.senderId, message: self.composedMessage, avatar: "C", isMe: true))
                     self.composedMessage = ""
                 }) {
                     Text("Send")

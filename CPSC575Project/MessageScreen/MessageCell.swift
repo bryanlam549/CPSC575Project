@@ -10,11 +10,12 @@ import Foundation
 import SwiftUI
 
 struct MessagesCell: View {
+    var userId: String
     var name: String
     var image: String
     var message: String
     var body: some View {
-        NavigationLink(destination: ChatView()){
+        NavigationLink(destination: ChatView(senderId: userId, chatController: VMChatRow(senderId: userId))){
             HStack {
                 Image(image)
                     .resizable()
@@ -36,6 +37,6 @@ struct MessagesCell: View {
 
 struct MessagesCell_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesCell(name: "Jordan Test", image: "maleMock3", message: "Hi! Would you like to go on hike at this...")
+        MessagesCell(userId: "1", name: "Jordan Test", image: "maleMock3", message: "Hi! Would you like to go on hike at this...")
     }
 }

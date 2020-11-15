@@ -10,7 +10,7 @@
         
         struct MessageView: View {
             //Hardcoded test values
-            // let newMatches = testMsgBubble
+            let testMsgCells = testMessagesCells
             
             var body: some View {
                 NavigationView{
@@ -35,8 +35,13 @@
                     
                     ListTitleView(title: "Messages")
                     List {
-                        MessagesCell(name: "Jordan1", image: "maleMock3", message: "Hi! Would you like to go on hike at this...")
-                        MessagesCell(name: "Jordan2", image: "logo", message: "Hi cutie :D :D :D!!!")
+                        
+                        //For loop here, will display new matches bubbles
+                        ForEach(0..<testMsgCells.count) { index in
+                            MessagesCell(userId: self.testMsgCells[index].userId, name: self.testMsgCells[index].name, image: self.testMsgCells[index].image, message: self.testMsgCells[index].message)
+                        }
+                        //MessagesCell(name: "Jordan1", image: "maleMock3", message: "Hi! Would you like to go on hike at this...")
+                        //MessagesCell(name: "Jordan2", image: "logo", message: "Hi cutie :D :D :D!!!")
                     }
                     
                     //For loop here
