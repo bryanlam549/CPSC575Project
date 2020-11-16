@@ -217,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				935184792559259C0008C282 /* Messaging */,
+				7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */,
+				7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */,
 				7EDB73B0254B4E1800128CF3 /* MessageCell.swift */,
 				7EDB73B3254B4EBC00128CF3 /* MessagesCellModel.swift */,
 				9388B961253CE41200F01654 /* MessageView.swift */,
@@ -229,8 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				7EDB73AD254B4DBC00128CF3 /* MatchingPersonDetailView.swift */,
-				7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */,
-				7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */,
 				9388B963253CE43000F01654 /* MatchView.swift */,
 			);
 			path = MatchScreen;
