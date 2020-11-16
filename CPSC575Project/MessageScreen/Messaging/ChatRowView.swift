@@ -7,17 +7,21 @@
 
 import Foundation
 import SwiftUI
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 // ChatRow will be a view similar to a Cell in standard Swift
 struct ChatRowView : View {
     // we will need to access and represent the chatMessages here
     var chatMessage: ChatMessageModel
+    let userId = Auth.auth().currentUser?.uid
     // body - is the body of the view, just like the body of the first view we created when opened the project
     var body: some View {
         // HStack - is a horizontal stack. We let the SwiftUI know that we need to place
         // all the following contents horizontally one after another
         Group {
-            if !chatMessage.isMe {
+            if chatMessage.userId != self.userId{
                 HStack {
                     Group {
                         Text(chatMessage.avatar)
