@@ -12,6 +12,7 @@ import Firebase
 
 
 class LoginSignUpModel : ObservableObject{
+    @Published var userRepository = UserRepository()
     @Published var mail = ""
     @Published var pass = ""
     @Published var isSignUp = false
@@ -74,7 +75,6 @@ class LoginSignUpModel : ObservableObject{
     func signUp(){
         // checking....
         if email_SignUp == "" || password_SignUp == "" || reEnterPassword == ""{
-            
             self.alertMsg = "Fill contents proprely!!!"
             self.alert.toggle()
             return
@@ -97,8 +97,12 @@ class LoginSignUpModel : ObservableObject{
                 return
             }
             
-            // sending Verifcation Link....
+            print("should add user to firebase here")
+            let userId = result?.user.uid
+            let addedUser = User(uid: userId, email: self.email_SignUp)
+            self.userRepository.addTask(addedUser)
             
+            // sending Verifcation Link....
             result?.user.sendEmailVerification(completion: { (err) in
                 
                 if err != nil{
@@ -111,6 +115,9 @@ class LoginSignUpModel : ObservableObject{
                 
                 self.alertMsg = "Email Verification Has Been Sent !!! Verify Your Email ID !!!"
                 self.alert.toggle()
+                //Need to sign out or else you get log in bug...
+                try! Auth.auth().signOut()
+                
             })
 
         })
