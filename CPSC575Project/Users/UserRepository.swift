@@ -21,14 +21,16 @@ class UserRepository: ObservableObject{
     }
     
     func loadData(){
-        let userId = Auth.auth().currentUser?.uid
-        
+        //let userId = Auth.auth().currentUser?.uid
         //set up a snapshot listener that listens
         db.collection("users2")
             //.order(by: "createdTime")
-            .whereField("userId", isEqualTo: userId as Any)
+            //.whereField("userId", isEqualTo: userId as Any)
             .addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
+                for d in querySnapshot.documents{
+                    print(d.documentID)
+                }
                 self.users = querySnapshot.documents.compactMap { document in
                     do{
                         let x = try document.data(as: User.self)
@@ -42,6 +44,7 @@ class UserRepository: ObservableObject{
             }
         }
     }
+    
     
     func addTask(_ user: User){
         do{
