@@ -17,13 +17,13 @@
 		7EDB73B7254B506E00128CF3 /* NewMatchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */; };
 		7EDB73BA254B50D500128CF3 /* NewMatchesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */; };
 		7EDB73BD254B515A00128CF3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73BC254B515A00128CF3 /* MainTabView.swift */; };
+		8144BFC9256372A9002F6800 /* ChatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351847C255925EE0008C282 /* ChatRowView.swift */; };
 		81BAE30B2551201300571BDF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 81BAE30A2551201300571BDF /* SDWebImageSwiftUI */; };
 		81F25A882553BBFB005181DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F25A872553BBFB005181DC /* SceneDelegate.swift */; };
 		934E6998256390850096669F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E6997256390850096669F /* UserRepository.swift */; };
 		934E699D2563CF7B0096669F /* MessageCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E699C2563CF7B0096669F /* MessageCellVM.swift */; };
 		934E699F2563CF8F0096669F /* MessageListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E699E2563CF8F0096669F /* MessageListVM.swift */; };
 		9351847B255925C10008C282 /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351847A255925C10008C282 /* ChatMessageModel.swift */; };
-		9351847D255925EE0008C282 /* ChatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351847C255925EE0008C282 /* ChatRowView.swift */; };
 		9351847F255926220008C282 /* VMChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351847E255926220008C282 /* VMChatRow.swift */; };
 		935184812559275B0008C282 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935184802559275B0008C282 /* ChatView.swift */; };
 		9359653625230FF7002E8593 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359653525230FF7002E8593 /* TestModel.swift */; };
@@ -62,7 +62,7 @@
 		934E699C2563CF7B0096669F /* MessageCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellVM.swift; sourceTree = "<group>"; };
 		934E699E2563CF8F0096669F /* MessageListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListVM.swift; sourceTree = "<group>"; };
 		9351847A255925C10008C282 /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
-		9351847C255925EE0008C282 /* ChatRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatRowView.swift; path = /Users/bryan/Desktop/CPSC575Project/CPSC575Project/MessageScreen/Messaging/ChatRowView.swift; sourceTree = "<absolute>"; };
+		9351847C255925EE0008C282 /* ChatRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRowView.swift; sourceTree = "<group>"; };
 		9351847E255926220008C282 /* VMChatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMChatRow.swift; sourceTree = "<group>"; };
 		935184802559275B0008C282 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		9359653525230FF7002E8593 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
@@ -400,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8144BFC9256372A9002F6800 /* ChatRowView.swift in Sources */,
 				81F25A882553BBFB005181DC /* SceneDelegate.swift in Sources */,
 				9388B940253CE16E00F01654 /* TestView.swift in Sources */,
 				7E4DB958254A06ED002619A4 /* TopView.swift in Sources */,
@@ -427,7 +428,6 @@
 				7E4DB95B254A070A002619A4 /* TopTitle.swift in Sources */,
 				93FEBEE32545F31A00FD5D04 /* User.swift in Sources */,
 				7EDB73AE254B4DBC00128CF3 /* MatchingPersonDetailView.swift in Sources */,
-				9351847D255925EE0008C282 /* ChatRowView.swift in Sources */,
 				9351847B255925C10008C282 /* ChatMessageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
