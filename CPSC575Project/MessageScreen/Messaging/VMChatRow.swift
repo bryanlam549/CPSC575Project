@@ -142,7 +142,10 @@ class VMChatRow : ObservableObject {
                             }
                             
                             /*for d in docu {
-                                print(d.documentID)
+                                
+                               //print(d.documentID)
+                                print(d.get("userId"))
+                                //print(d.data())
                             }*/
                             
                             //Using a compact map so whenever we return NIL this gets filtered out by the compact map
