@@ -8,20 +8,26 @@
 
 import Foundation
 import UIKit
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-struct User {
+
+struct User: Codable, Identifiable {
 
 // MARK: - Properties
-
-    var age: Int?
+    
+    @DocumentID var id: String?
     var uid: String?
-    var bio: String?
-    var name: String?
-    var imageUrl1: String?
-    var imageUrl2: String?
-    var imageUrl3: String?
-    var profession: String?
-    var minSeekingAge: Int?
-    var maxSeekingAge: Int?
+    var email: String = ""
+    
+    var name: String = ""
+    var age: Int = 18
+    var bio: String = ""
+    var imageUrl1: String = ""
+    var imageUrl2: String = ""
+    var imageUrl3: String = ""
+    var profession: String = ""
+    var minSeekingAge: Int = 18
+    var maxSeekingAge: Int = 50
     
 }

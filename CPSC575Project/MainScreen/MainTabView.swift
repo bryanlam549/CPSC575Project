@@ -23,7 +23,7 @@ struct MainTabView: View {
                     Image(systemName: "heart.fill")
                 }
             
-            MessageView()
+            MessageListView()
                 .tabItem {
                     Image(systemName: "message.fill")
                 }

@@ -42,7 +42,7 @@ struct ContentView: View {
 					
 					
 					
-					MessageView()
+					MessageListView()
 						.font(.title)
 						.tabItem {
 							VStack {
