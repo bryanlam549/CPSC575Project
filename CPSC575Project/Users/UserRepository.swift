@@ -1,6 +1,6 @@
 //
 //  UserRepository.swift
-//  CPSC575Project
+//  CPSC575Project  
 //
 //  Created by bryan lam on 2020-11-16.
 //  Copyright © 2020 bryan lam. All rights reserved.
@@ -21,7 +21,7 @@ class UserRepository: ObservableObject{
 
     
     init(){
-        loadData2()
+        //loadData2()
         loadData()
     }
     
