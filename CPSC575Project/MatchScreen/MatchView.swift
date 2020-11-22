@@ -21,7 +21,9 @@ struct MatchView: View {
             }
             Loader()
             VStack{
-                TopMatchView()
+                TopView().padding(.bottom)
+                //Spacer().frame(height: 30)
+                //TopMatchView()
                 SwipeMatchView()
                 BottomMatchView()
             }
