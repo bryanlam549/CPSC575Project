@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20E907FC62C1BFD1C2BFD4E2 /* Pods_CPSC575Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1EDEB747075F92E4C60975 /* Pods_CPSC575Project.framework */; };
 		7E4DB955254A06D2002619A4 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DB954254A06D2002619A4 /* AppView.swift */; };
 		7E4DB958254A06ED002619A4 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DB957254A06ED002619A4 /* TopView.swift */; };
 		7E4DB95B254A070A002619A4 /* TopTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DB95A254A070A002619A4 /* TopTitle.swift */; };
@@ -18,7 +19,8 @@
 		7EDB73BA254B50D500128CF3 /* NewMatchesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */; };
 		7EDB73BD254B515A00128CF3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73BC254B515A00128CF3 /* MainTabView.swift */; };
 		8144BFC9256372A9002F6800 /* ChatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351847C255925EE0008C282 /* ChatRowView.swift */; };
-		81BAE30B2551201300571BDF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 81BAE30A2551201300571BDF /* SDWebImageSwiftUI */; };
+		8144BFCD256A5596002F6800 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8144BFCC256A5595002F6800 /* UploadImage.swift */; };
+		81BAE30B2551201300571BDF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 81BAE30A2551201300571BDF /* SwiftPackageProductDependency */; };
 		81F25A882553BBFB005181DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F25A872553BBFB005181DC /* SceneDelegate.swift */; };
 		934E6998256390850096669F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E6997256390850096669F /* UserRepository.swift */; };
 		934E699D2563CF7B0096669F /* MessageCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E699C2563CF7B0096669F /* MessageCellVM.swift */; };
@@ -41,12 +43,11 @@
 		93EEF053254FFADB002C5E18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93EEF052254FFADB002C5E18 /* Assets.xcassets */; };
 		93FEBEE32545F31A00FD5D04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FEBEE22545F31A00FD5D04 /* User.swift */; };
 		93FEBF0A2546258B00FD5D04 /* LoginSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FEBF092546258B00FD5D04 /* LoginSignUpView.swift */; };
-		E51394951947C3EABADE1D33 /* Pods_CPSC575Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E207121F52A445C4DC1C683 /* Pods_CPSC575Project.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18592B7796A1938A75276D42 /* Pods-CPSC575Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPSC575Project.release.xcconfig"; path = "Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project.release.xcconfig"; sourceTree = "<group>"; };
-		5E207121F52A445C4DC1C683 /* Pods_CPSC575Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPSC575Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B1EDEB747075F92E4C60975 /* Pods_CPSC575Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPSC575Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		364111D1247EC6C39214B9C2 /* Pods-CPSC575Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPSC575Project.release.xcconfig"; path = "Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project.release.xcconfig"; sourceTree = "<group>"; };
 		7E4DB954254A06D2002619A4 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		7E4DB957254A06ED002619A4 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		7E4DB95A254A070A002619A4 /* TopTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTitle.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesCell.swift; sourceTree = "<group>"; };
 		7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesCellModel.swift; sourceTree = "<group>"; };
 		7EDB73BC254B515A00128CF3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		8144BFCC256A5595002F6800 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 		81F25A872553BBFB005181DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		934E6997256390850096669F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		934E699C2563CF7B0096669F /* MessageCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellVM.swift; sourceTree = "<group>"; };
@@ -82,7 +84,7 @@
 		93EEF052254FFADB002C5E18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93FEBEE22545F31A00FD5D04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		93FEBF092546258B00FD5D04 /* LoginSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpView.swift; sourceTree = "<group>"; };
-		E3A5B856865AD5F6D6578178 /* Pods-CPSC575Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPSC575Project.debug.xcconfig"; path = "Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project.debug.xcconfig"; sourceTree = "<group>"; };
+		E08CE16EE8FA9A3C888ACBDD /* Pods-CPSC575Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPSC575Project.debug.xcconfig"; path = "Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,18 +92,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81BAE30B2551201300571BDF /* SDWebImageSwiftUI in Frameworks */,
-				E51394951947C3EABADE1D33 /* Pods_CPSC575Project.framework in Frameworks */,
+				81BAE30B2551201300571BDF /* BuildFile in Frameworks */,
+				20E907FC62C1BFD1C2BFD4E2 /* Pods_CPSC575Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		61FD6FD44B96F506D8891632 /* Frameworks */ = {
+		602E1E3D5CCACEE4D3ABC223 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E207121F52A445C4DC1C683 /* Pods_CPSC575Project.framework */,
+				0B1EDEB747075F92E4C60975 /* Pods_CPSC575Project.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,7 +133,7 @@
 				93AE5AB02523056700F8C49A /* CPSC575Project */,
 				93AE5AAF2523056700F8C49A /* Products */,
 				B648E5D0014208FD8574C049 /* Pods */,
-				61FD6FD44B96F506D8891632 /* Frameworks */,
+				602E1E3D5CCACEE4D3ABC223 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				9388B965253CE43D00F01654 /* ProfileView.swift */,
+				8144BFCC256A5595002F6800 /* UploadImage.swift */,
 				7E4DB954254A06D2002619A4 /* AppView.swift */,
 			);
 			path = ProfileScreen;
@@ -272,8 +275,8 @@
 		B648E5D0014208FD8574C049 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E3A5B856865AD5F6D6578178 /* Pods-CPSC575Project.debug.xcconfig */,
-				18592B7796A1938A75276D42 /* Pods-CPSC575Project.release.xcconfig */,
+				E08CE16EE8FA9A3C888ACBDD /* Pods-CPSC575Project.debug.xcconfig */,
+				364111D1247EC6C39214B9C2 /* Pods-CPSC575Project.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -285,11 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93AE5AC22523056800F8C49A /* Build configuration list for PBXNativeTarget "CPSC575Project" */;
 			buildPhases = (
-				93FC68BFE891F7A0535A1F01 /* [CP] Check Pods Manifest.lock */,
+				EEC3C385C34C812D3C8A65AB /* [CP] Check Pods Manifest.lock */,
 				93AE5AAA2523056700F8C49A /* Sources */,
 				93AE5AAB2523056700F8C49A /* Frameworks */,
 				93AE5AAC2523056700F8C49A /* Resources */,
-				72FCEA9E847D6E8F5BD228FB /* [CP] Embed Pods Frameworks */,
+				FEC899A2B659990045DC87A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,7 +300,7 @@
 			);
 			name = CPSC575Project;
 			packageProductDependencies = (
-				81BAE30A2551201300571BDF /* SDWebImageSwiftUI */,
+				81BAE30A2551201300571BDF /* SwiftPackageProductDependency */,
 			);
 			productName = CPSC575Project;
 			productReference = 93AE5AAE2523056700F8C49A /* CPSC575Project.app */;
@@ -328,7 +331,7 @@
 			);
 			mainGroup = 93AE5AA52523056700F8C49A;
 			packageReferences = (
-				81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				81BAE3092551201300571BDF /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 93AE5AAF2523056700F8C49A /* Products */;
 			projectDirPath = "";
@@ -354,24 +357,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		72FCEA9E847D6E8F5BD228FB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		93FC68BFE891F7A0535A1F01 /* [CP] Check Pods Manifest.lock */ = {
+		EEC3C385C34C812D3C8A65AB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -391,6 +377,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEC899A2B659990045DC87A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -422,6 +425,7 @@
 				7E4DB955254A06D2002619A4 /* AppView.swift in Sources */,
 				9359653625230FF7002E8593 /* TestModel.swift in Sources */,
 				7EDB73BA254B50D500128CF3 /* NewMatchesCellModel.swift in Sources */,
+				8144BFCD256A5596002F6800 /* UploadImage.swift in Sources */,
 				934E699D2563CF7B0096669F /* MessageCellVM.swift in Sources */,
 				7EDB73B7254B506E00128CF3 /* NewMatchesCell.swift in Sources */,
 				93FEBF0A2546258B00FD5D04 /* LoginSignUpView.swift in Sources */,
@@ -562,7 +566,7 @@
 		};
 		93AE5AC32523056800F8C49A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3A5B856865AD5F6D6578178 /* Pods-CPSC575Project.debug.xcconfig */;
+			baseConfigurationReference = E08CE16EE8FA9A3C888ACBDD /* Pods-CPSC575Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -583,7 +587,7 @@
 		};
 		93AE5AC42523056800F8C49A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18592B7796A1938A75276D42 /* Pods-CPSC575Project.release.xcconfig */;
+			baseConfigurationReference = 364111D1247EC6C39214B9C2 /* Pods-CPSC575Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -626,7 +630,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+		81BAE3092551201300571BDF /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
@@ -637,9 +641,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		81BAE30A2551201300571BDF /* SDWebImageSwiftUI */ = {
+		81BAE30A2551201300571BDF /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			package = 81BAE3092551201300571BDF /* RemoteSwiftPackageReference */;
 			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */

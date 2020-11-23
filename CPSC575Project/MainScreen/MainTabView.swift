@@ -16,7 +16,6 @@ struct MainTabView: View {
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
-                    
                 }
             MatchingPersonDetailView()
                 .tabItem {
