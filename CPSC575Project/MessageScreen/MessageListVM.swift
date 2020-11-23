@@ -16,7 +16,7 @@ class MessageListVM: ObservableObject{
     private var cancellables = Set<AnyCancellable>()
     
     init(){
-        userRepository.$users.map { users in
+        userRepository.$matchedUsers.map { users in
             users.map { user in
                 MessageCellVM(messageCell: MessagesCellModel(userId: user.uid!, name: user.name, image: user.imageUrl1, message: "need to somehow grab this"))
             }
