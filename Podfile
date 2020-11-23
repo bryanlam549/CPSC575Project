@@ -18,7 +18,7 @@ target 'CPSC575Project' do
   installer.pods_project.targets.each do |target|
       if target.name == 'MessageKit'
           target.build_configurations.each do |config|
-              config.build_settings['SWIFT_VERSION'] = '4.0'
+              config.build_settings['SWIFT_VERSION'] = '4.2'
           end
       end
   end
