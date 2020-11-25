@@ -9,29 +9,46 @@
         import SwiftUI
         import Firebase
 
+        let FILE_NAME = "Profile Images/" + userID() + ".jpg"
+        var downloadedProfileImage = false
         struct ProfileView: View {
             @EnvironmentObject var model: LoginSignUpModel // for testing
+            @State var shown = false
+            @State var imageURL = ""
+            func loadImageFromFirebase() {
+                let storage = Storage.storage().reference(withPath: FILE_NAME)
+                storage.downloadURL { (url, error) in
+                    if error != nil {
+                        print((error?.localizedDescription)!)
+                        return
+                    }
+                    print(userID())
+                    print("Download success")
+                    self.imageURL = "\(url!)"
+                }
+            }
             
             var body: some View {
                 VStack{
                     //TopView().padding(.bottom)
                     ZStack{
-                        Image("profile").resizable().edgesIgnoringSafeArea(.all).blur(radius: 80)
+                        //Image("profile").resizable().edgesIgnoringSafeArea(.all).blur(radius: 80)
                                         GeometryReader { geo in
-                                                    
                                                     VStack {
                                                         TopView().padding(.bottom).offset(y: -10)
                                                         Spacer()//.frame(height: 30)
-                                                        Text("Profile")
+                                                        HStack{Text("Profile")
                                                             .font(.title)
-                                                            .fontWeight(.bold)
+                                                            .fontWeight(.bold)}.offset(y:40)
                                                         //Spacer().frame(height: 20)
                                                         ZStack {
-                                                            Image("profile")
-                                                                .resizable()
-                                                                .frame(width: geo.size.width / 1.5, height: geo.size.width / 1.5, alignment: .center)
-                                                                .cornerRadius((geo.size.width / 1.5) / 2)
-                                                            
+                                                            //loadImageFromFirebase()
+                                                            if downloadedProfileImage == false {
+                                                                Image("profile").resizable()
+                                                                    .frame(width: geo.size.width / 1.5, height: geo.size.width / 1.5, alignment: .center)
+                                                                    .cornerRadius((geo.size.width / 1.5) / 2)
+                                                            }
+                                                        if self.imageURL != "" {FirebaseImageView(imageURL: self.imageURL)}
                                                             VStack {
                                                                 Spacer()
                                                                 HStack {
@@ -43,8 +60,13 @@
                                                             }
                                                             
                                                         }
-                                                        .frame(width: geo.size.width / 1.5, height: geo.size.width / 1.5, alignment: .center)
-                                                        .padding(.bottom, 10)
+//                                                        .frame(width: geo.size.width / 1.5, height: geo.size.width / 1.5, alignment: .center)
+//                                                        .padding(.bottom, 10)
+                                                        .frame(
+                                                            width: geo.size.width / 1.1,
+                                                            height: geo.size.width / 1.1,
+                                                            alignment: .center
+                                                        ).padding(.bottom, 10)
                                                         
                         //                                Text("Jane Doe, 22")
                         //                                    .font(.title)
@@ -82,7 +104,7 @@
                                                             
                                                         ZStack{
                                                             Button(action: {
-                                                                
+                                                                self.shown.toggle()
                                                             }) {
                                                                 Image("camera")
                                                                 .renderingMode(.original)
@@ -93,10 +115,10 @@
                                                                 .background(Blurview())
                                                                 //.background(Color.white)
                                                                 .clipShape(Circle())
-                                                            }
+                                                            }.sheet(isPresented: self.$shown) {imagePicker(shown: self.$shown,imageURL: self.$imageURL)}
                                                             
                                                             Circle().stroke(Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)), lineWidth: 5).frame(width: 70, height: 70)
-                                                        }.offset(y: -35)
+                                                        }.offset(y: -35).onAppear(perform: self.loadImageFromFirebase).animation(.spring())
                                                             
                                                         HStack{
                                                             ZStack{
@@ -178,3 +200,9 @@
                 
             }
         }
+
+        func userID() -> String {
+            let userID : String = (Auth.auth().currentUser?.uid)!
+            return(userID)
+        }
+
