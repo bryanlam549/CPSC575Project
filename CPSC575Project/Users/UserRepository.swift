@@ -21,7 +21,7 @@ class UserRepository: ObservableObject{
 
     
     init(){
-        //loadData2()
+        loadData2()
         loadData()
     }
     
@@ -56,10 +56,12 @@ class UserRepository: ObservableObject{
             
     }
     func loadData2(){
-        let userId = Auth.auth().currentUser?.uid
-        
+        var userId = Auth.auth().currentUser?.uid
+        if (userId == nil){
+            userId = ""
+        }
         db.collection("chats")
-        .whereField("users", arrayContainsAny: [userId])
+        .whereField("users", arrayContainsAny: [userId as Any])
         .addSnapshotListener {(querySnapshot, error) in
                 guard let docu = querySnapshot?.documents else{
                     print("no documents")
