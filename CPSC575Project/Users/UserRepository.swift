@@ -16,16 +16,17 @@ class UserRepository: ObservableObject{
     let db = Firestore.firestore()
     @Published var users = [User]()
     @Published var matchedUsers = [User]()
-    @Published var testStrings = [String]()
+    @Published var matchedUsersId = [String]()
 
 
     
     init(){
-        loadData2()
-        loadData()
+        loadMatchUsers()
+        loadUsers()
     }
     
-    func loadData(){
+    //Load list of all users in database
+    func loadUsers(){
         //let userId = Auth.auth().currentUser?.uid
         //set up a snapshot listener that listens
         db.collection("users2")
@@ -55,11 +56,16 @@ class UserRepository: ObservableObject{
             //.whereField("userId", isEqualTo: userId as Any)
             
     }
-    func loadData2(){
+    
+    //Load list of matched users, used in message screen
+    func loadMatchUsers(){
         var userId = Auth.auth().currentUser?.uid
+        
+        //Check if user is logged in, bug if we leave userId as nil
         if (userId == nil){
             userId = ""
         }
+        //Check Firstbase Chats
         db.collection("chats")
         .whereField("users", arrayContainsAny: [userId as Any])
         .addSnapshotListener {(querySnapshot, error) in
@@ -70,22 +76,24 @@ class UserRepository: ObservableObject{
                 
             //Assign ids of users you've been matched to
                 for d in docu {
-                    let k: [String] = d.get("users") as! [String]
-                    for u in k{
-                        if (!self.testStrings.contains(u) && u != userId){
-                            self.testStrings.append(u)
+                    let docUserIdPair: [String] = d.get("users") as! [String]
+                    for docUserId in docUserIdPair{
+                        //Check if user is yourself, don't append to list and also check for duplicates
+                        if (!self.matchedUsersId.contains(docUserId) && docUserId != userId){
+                            self.matchedUsersId.append(docUserId)
                         }
                     }
                 }
-            //print(Auth.auth().currentUser?.uid)
-            //print(self.testStrings)
-            if self.testStrings.count == 0{
-                self.testStrings.append("")
-            }
-            self.db.collection("users2")
-                //.whereField("uid", arrayContainsAny: ["MWP2iMrkdLYB8t2bGeLwIm3EQiD3"])
-                .whereField("uid", in: self.testStrings)
             
+            
+            //if Zero matches, must append empty or else error occurs
+            if self.matchedUsersId.count == 0{
+                self.matchedUsersId.append("")
+            }
+            
+            //Grab users from match list and bind it matchUsers list
+            self.db.collection("users2")
+                .whereField("uid", in: self.matchedUsersId)
                 .addSnapshotListener { (querySnapshot, error) in
                 if let querySnapshot = querySnapshot {
                     /*DEBUG
@@ -129,8 +137,8 @@ class UserRepository: ObservableObject{
         }*/
     }
     
-    
-    func addTask(_ user: User){
+    //Add user whenever they sign up
+    func addUser(_ user: User){
         do{
             var addedUser = user
             addedUser.uid = Auth.auth().currentUser?.uid
@@ -140,5 +148,10 @@ class UserRepository: ObservableObject{
             fatalError("Unable to encode task: \(error.localizedDescription)")
         }
         
+    }
+    
+    //Delete user whenever they are deleted
+    func delUser (_ user: User){
+    
     }
 }

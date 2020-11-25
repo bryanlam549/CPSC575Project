@@ -11,7 +11,7 @@
         struct MessageListView: View {
             @ObservedObject var messageListVM = MessageListVM()
             //Hardcoded test values
-            let testMsgCells = testMessagesCells
+            //let testMsgCells = testMessagesCells
             
             var body: some View {
                 NavigationView{
@@ -36,24 +36,10 @@
                         
                         ListTitleView(title: "Messages")
                         List {
-                            
                             ForEach(messageListVM.messageCellVM) { messageCellVM in
                                 MessagesCell(messageCellVM: messageCellVM)
-                                //TaskCell(taskCellVM: taskCellVM)
                             }
-                            
-                            //For loop here, will display new matches bubbles
-                            /*ForEach(0..<testMsgCells.count) { index in
-                                MessagesCell(userId: self.testMsgCells[index].userId, name: self.testMsgCells[index].name, image: self.testMsgCells[index].image, message: self.testMsgCells[index].message)
-                            }*/
-                            //MessagesCell(name: "Jordan1", image: "maleMock3", message: "Hi! Would you like to go on hike at this...")
-                            //MessagesCell(name: "Jordan2", image: "logo", message: "Hi cutie :D :D :D!!!")
                         }
-                        
-                        //For loop here
-                        //ForEach(0..<newMatches.count) { index in
-                        //  NavigationLink(destination: TestView()){
-                        // Text(self.newMatches[index].name)
                     }
                     .navigationBarTitle("")
                     .navigationBarHidden(true)

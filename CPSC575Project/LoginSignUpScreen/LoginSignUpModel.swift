@@ -100,7 +100,7 @@ class LoginSignUpModel : ObservableObject{
             print("should add user to firebase here")
             let userId = result?.user.uid
             let addedUser = User(uid: userId, email: self.email_SignUp)
-            self.userRepository.addTask(addedUser)
+            self.userRepository.addUser(addedUser)
             
             // sending Verifcation Link....
             result?.user.sendEmailVerification(completion: { (err) in
