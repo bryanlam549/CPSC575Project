@@ -18,9 +18,11 @@
 		7EDB73B7254B506E00128CF3 /* NewMatchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */; };
 		7EDB73BA254B50D500128CF3 /* NewMatchesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */; };
 		7EDB73BD254B515A00128CF3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73BC254B515A00128CF3 /* MainTabView.swift */; };
+		8126CAF2256B51CA0057423A /* FirebaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126CAF1256B51CA0057423A /* FirebaseImageView.swift */; };
+		8126CAF4256B53A60057423A /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126CAF3256B53A60057423A /* ImagePickerController.swift */; };
 		8144BFC9256372A9002F6800 /* ChatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351847C255925EE0008C282 /* ChatRowView.swift */; };
-		8144BFCD256A5596002F6800 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8144BFCC256A5595002F6800 /* UploadImage.swift */; };
-		81BAE30B2551201300571BDF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 81BAE30A2551201300571BDF /* SwiftPackageProductDependency */; };
+		8144BFCD256A5596002F6800 /* UploadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8144BFCC256A5595002F6800 /* UploadImageView.swift */; };
+		81BAE30B2551201300571BDF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 81BAE30A2551201300571BDF /* SDWebImageSwiftUI */; };
 		81F25A882553BBFB005181DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F25A872553BBFB005181DC /* SceneDelegate.swift */; };
 		934E6998256390850096669F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E6997256390850096669F /* UserRepository.swift */; };
 		934E699D2563CF7B0096669F /* MessageCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E699C2563CF7B0096669F /* MessageCellVM.swift */; };
@@ -58,7 +60,9 @@
 		7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesCell.swift; sourceTree = "<group>"; };
 		7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesCellModel.swift; sourceTree = "<group>"; };
 		7EDB73BC254B515A00128CF3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		8144BFCC256A5595002F6800 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
+		8126CAF1256B51CA0057423A /* FirebaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageView.swift; sourceTree = "<group>"; };
+		8126CAF3256B53A60057423A /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		8144BFCC256A5595002F6800 /* UploadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageView.swift; sourceTree = "<group>"; };
 		81F25A872553BBFB005181DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		934E6997256390850096669F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		934E699C2563CF7B0096669F /* MessageCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellVM.swift; sourceTree = "<group>"; };
@@ -92,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81BAE30B2551201300571BDF /* BuildFile in Frameworks */,
+				81BAE30B2551201300571BDF /* SDWebImageSwiftUI in Frameworks */,
 				20E907FC62C1BFD1C2BFD4E2 /* Pods_CPSC575Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,7 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				9388B965253CE43D00F01654 /* ProfileView.swift */,
-				8144BFCC256A5595002F6800 /* UploadImage.swift */,
+				8144BFCC256A5595002F6800 /* UploadImageView.swift */,
+				8126CAF3256B53A60057423A /* ImagePickerController.swift */,
+				8126CAF1256B51CA0057423A /* FirebaseImageView.swift */,
 				7E4DB954254A06D2002619A4 /* AppView.swift */,
 			);
 			path = ProfileScreen;
@@ -300,7 +306,7 @@
 			);
 			name = CPSC575Project;
 			packageProductDependencies = (
-				81BAE30A2551201300571BDF /* SwiftPackageProductDependency */,
+				81BAE30A2551201300571BDF /* SDWebImageSwiftUI */,
 			);
 			productName = CPSC575Project;
 			productReference = 93AE5AAE2523056700F8C49A /* CPSC575Project.app */;
@@ -331,7 +337,7 @@
 			);
 			mainGroup = 93AE5AA52523056700F8C49A;
 			packageReferences = (
-				81BAE3092551201300571BDF /* RemoteSwiftPackageReference */,
+				81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 93AE5AAF2523056700F8C49A /* Products */;
 			projectDirPath = "";
@@ -416,6 +422,7 @@
 				93AE5AB22523056700F8C49A /* AppDelegate.swift in Sources */,
 				7EDB73BD254B515A00128CF3 /* MainTabView.swift in Sources */,
 				934E6998256390850096669F /* UserRepository.swift in Sources */,
+				8126CAF2256B51CA0057423A /* FirebaseImageView.swift in Sources */,
 				93AE5AB62523056700F8C49A /* ContentView.swift in Sources */,
 				7EDB73B1254B4E1800128CF3 /* MessageCell.swift in Sources */,
 				9388B962253CE41200F01654 /* MessageListView.swift in Sources */,
@@ -425,10 +432,11 @@
 				7E4DB955254A06D2002619A4 /* AppView.swift in Sources */,
 				9359653625230FF7002E8593 /* TestModel.swift in Sources */,
 				7EDB73BA254B50D500128CF3 /* NewMatchesCellModel.swift in Sources */,
-				8144BFCD256A5596002F6800 /* UploadImage.swift in Sources */,
+				8144BFCD256A5596002F6800 /* UploadImageView.swift in Sources */,
 				934E699D2563CF7B0096669F /* MessageCellVM.swift in Sources */,
 				7EDB73B7254B506E00128CF3 /* NewMatchesCell.swift in Sources */,
 				93FEBF0A2546258B00FD5D04 /* LoginSignUpView.swift in Sources */,
+				8126CAF4256B53A60057423A /* ImagePickerController.swift in Sources */,
 				7E4DB95B254A070A002619A4 /* TopTitle.swift in Sources */,
 				93FEBEE32545F31A00FD5D04 /* User.swift in Sources */,
 				7EDB73AE254B4DBC00128CF3 /* MatchingPersonDetailView.swift in Sources */,
@@ -630,7 +638,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		81BAE3092551201300571BDF /* RemoteSwiftPackageReference */ = {
+		81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
@@ -641,9 +649,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		81BAE30A2551201300571BDF /* SwiftPackageProductDependency */ = {
+		81BAE30A2551201300571BDF /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 81BAE3092551201300571BDF /* RemoteSwiftPackageReference */;
+			package = 81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
