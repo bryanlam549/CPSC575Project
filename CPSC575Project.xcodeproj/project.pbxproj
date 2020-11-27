@@ -20,7 +20,7 @@
 		7EDB73BD254B515A00128CF3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73BC254B515A00128CF3 /* MainTabView.swift */; };
 		8144BFC9256372A9002F6800 /* ChatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351847C255925EE0008C282 /* ChatRowView.swift */; };
 		8144BFCD256A5596002F6800 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8144BFCC256A5595002F6800 /* UploadImage.swift */; };
-		81BAE30B2551201300571BDF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 81BAE30A2551201300571BDF /* SwiftPackageProductDependency */; };
+		81BAE30B2551201300571BDF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 81BAE30A2551201300571BDF /* SDWebImageSwiftUI */; };
 		81F25A882553BBFB005181DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F25A872553BBFB005181DC /* SceneDelegate.swift */; };
 		934E6998256390850096669F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E6997256390850096669F /* UserRepository.swift */; };
 		934E699D2563CF7B0096669F /* MessageCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E699C2563CF7B0096669F /* MessageCellVM.swift */; };
@@ -28,6 +28,7 @@
 		9351847B255925C10008C282 /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351847A255925C10008C282 /* ChatMessageModel.swift */; };
 		9351847F255926220008C282 /* VMChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351847E255926220008C282 /* VMChatRow.swift */; };
 		935184812559275B0008C282 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935184802559275B0008C282 /* ChatView.swift */; };
+		935392F62571C07800F8E0F3 /* ChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935392F52571C07800F8E0F3 /* ChatRepository.swift */; };
 		9359653625230FF7002E8593 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359653525230FF7002E8593 /* TestModel.swift */; };
 		93596538252310B9002E8593 /* VMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93596537252310B9002E8593 /* VMTest.swift */; };
 		9388B940253CE16E00F01654 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9388B93F253CE16E00F01654 /* TestView.swift */; };
@@ -67,6 +68,7 @@
 		9351847C255925EE0008C282 /* ChatRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRowView.swift; sourceTree = "<group>"; };
 		9351847E255926220008C282 /* VMChatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMChatRow.swift; sourceTree = "<group>"; };
 		935184802559275B0008C282 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		935392F52571C07800F8E0F3 /* ChatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepository.swift; sourceTree = SOURCE_ROOT; };
 		9359653525230FF7002E8593 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		93596537252310B9002E8593 /* VMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMTest.swift; sourceTree = "<group>"; };
 		9388B93F253CE16E00F01654 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -92,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81BAE30B2551201300571BDF /* BuildFile in Frameworks */,
+				81BAE30B2551201300571BDF /* SDWebImageSwiftUI in Frameworks */,
 				20E907FC62C1BFD1C2BFD4E2 /* Pods_CPSC575Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +207,7 @@
 		93AE5ACB2523061C00F8C49A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				935392F52571C07800F8E0F3 /* ChatRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -300,7 +303,7 @@
 			);
 			name = CPSC575Project;
 			packageProductDependencies = (
-				81BAE30A2551201300571BDF /* SwiftPackageProductDependency */,
+				81BAE30A2551201300571BDF /* SDWebImageSwiftUI */,
 			);
 			productName = CPSC575Project;
 			productReference = 93AE5AAE2523056700F8C49A /* CPSC575Project.app */;
@@ -331,7 +334,7 @@
 			);
 			mainGroup = 93AE5AA52523056700F8C49A;
 			packageReferences = (
-				81BAE3092551201300571BDF /* RemoteSwiftPackageReference */,
+				81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 93AE5AAF2523056700F8C49A /* Products */;
 			projectDirPath = "";
@@ -408,6 +411,7 @@
 				9388B940253CE16E00F01654 /* TestView.swift in Sources */,
 				7E4DB958254A06ED002619A4 /* TopView.swift in Sources */,
 				9388B966253CE43D00F01654 /* ProfileView.swift in Sources */,
+				935392F62571C07800F8E0F3 /* ChatRepository.swift in Sources */,
 				7EDB73B4254B4EBC00128CF3 /* MessagesCellModel.swift in Sources */,
 				935184812559275B0008C282 /* ChatView.swift in Sources */,
 				93596538252310B9002E8593 /* VMTest.swift in Sources */,
@@ -630,7 +634,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		81BAE3092551201300571BDF /* RemoteSwiftPackageReference */ = {
+		81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
@@ -641,9 +645,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		81BAE30A2551201300571BDF /* SwiftPackageProductDependency */ = {
+		81BAE30A2551201300571BDF /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 81BAE3092551201300571BDF /* RemoteSwiftPackageReference */;
+			package = 81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */

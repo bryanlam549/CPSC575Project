@@ -11,7 +11,7 @@ import Combine
 
 class MessageCellVM: ObservableObject, Identifiable {
     @Published var userRepository = UserRepository()
-    @Published var messageCell: MessagesCellModel
+    @Published var user: User
     
     var uid = ""
     var name = ""
@@ -19,37 +19,37 @@ class MessageCellVM: ObservableObject, Identifiable {
     var message = ""
     private var cancellables = Set<AnyCancellable>()
     
-    init(messageCell: MessagesCellModel) {
-        self.messageCell = messageCell
+    init(user: User) {
+        self.user = user
         
         //User id
-        $messageCell
+        $user
             .compactMap { messageCell in
-                messageCell.userId
+                user.uid
         }
         .assign(to: \.uid, on: self)
         .store(in: &cancellables)
         
         //name
-        $messageCell
+        $user
             .compactMap { messageCell in
-                messageCell.name
+                user.name
         }
         .assign(to: \.name, on: self)
         .store(in: &cancellables)
         
         //image
-        $messageCell
+        $user
             .compactMap { messageCell in
-                messageCell.image
+                user.imageUrl1
         }
         .assign(to: \.image, on: self)
         .store(in: &cancellables)
         
         //message
-        $messageCell
+        $user
             .compactMap { messageCell in
-                messageCell.message
+                "test"
         }
         .assign(to: \.message, on: self)
         .store(in: &cancellables)

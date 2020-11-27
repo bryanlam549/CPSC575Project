@@ -19,7 +19,7 @@ class MessageListVM: ObservableObject{
         userRepository.$matchedUsers.map { users in
             users.map { user in
                 //I need to access chatRepository, use user uid to find most recent message and probably chat timestamp?
-                MessageCellVM(messageCell: MessagesCellModel(userId: user.uid!, name: user.name, image: user.imageUrl1, message: "need to somehow grab this"))
+                MessageCellVM(user: user)
             }
         }
         .assign(to: \.messageCellVM, on: self)
