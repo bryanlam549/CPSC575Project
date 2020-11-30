@@ -16,11 +16,9 @@ import Firebase
 struct ChatMessageModel : Identifiable, Codable, Hashable {
     @DocumentID var id: String? = UUID().uuidString //FirebaseAuth.Auth.auth().currentUser
     var userId = FirebaseAuth.Auth.auth().currentUser?.uid
-    var senderId: String    //Should be the sender's uid
-    
+    //var senderId: String    //Should be the sender's uid
     var message: String
     var avatar: String
-    var isMe: Bool = false
-    
+    //var isMe: Bool = false
     @ServerTimestamp var createdTime: Timestamp?
 }
