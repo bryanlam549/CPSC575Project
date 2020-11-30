@@ -36,6 +36,7 @@
 		9388B964253CE43000F01654 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9388B963253CE43000F01654 /* MatchView.swift */; };
 		9388B966253CE43D00F01654 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9388B965253CE43D00F01654 /* ProfileView.swift */; };
 		9394CE412548083D00121D5F /* LoginSignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9394CE402548083D00121D5F /* LoginSignUpModel.swift */; };
+		93A934542574AF2000185DE8 /* ChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A934532574AF2000185DE8 /* ChatRepository.swift */; };
 		93AE5AB22523056700F8C49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AE5AB12523056700F8C49A /* AppDelegate.swift */; };
 		93AE5AB62523056700F8C49A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AE5AB52523056700F8C49A /* ContentView.swift */; };
 		93AE5ABB2523056800F8C49A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93AE5ABA2523056800F8C49A /* Preview Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		9388B963253CE43000F01654 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		9388B965253CE43D00F01654 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		9394CE402548083D00121D5F /* LoginSignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpModel.swift; sourceTree = "<group>"; };
+		93A934532574AF2000185DE8 /* ChatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepository.swift; sourceTree = "<group>"; };
 		93AE5AAE2523056700F8C49A /* CPSC575Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPSC575Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AE5AB12523056700F8C49A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CPSC575Project/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		93AE5AB52523056700F8C49A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 1; };
@@ -209,6 +211,7 @@
 		93AE5ACB2523061C00F8C49A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				93A934532574AF2000185DE8 /* ChatRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				9388B962253CE41200F01654 /* MessageListView.swift in Sources */,
 				9351847F255926220008C282 /* ChatRowVM.swift in Sources */,
 				7EDB73AB254B4CDE00128CF3 /* ListTitleView.swift in Sources */,
+				93A934542574AF2000185DE8 /* ChatRepository.swift in Sources */,
 				934E699F2563CF8F0096669F /* MessageListVM.swift in Sources */,
 				7E4DB955254A06D2002619A4 /* AppView.swift in Sources */,
 				9359653625230FF7002E8593 /* TestModel.swift in Sources */,
