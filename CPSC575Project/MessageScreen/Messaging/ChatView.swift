@@ -14,7 +14,7 @@ struct ChatView : View {
     var senderId: String
      // @State here is necessary to make the composedMessage variable accessible from different views
     @State var composedMessage: String = ""
-    @ObservedObject var chatController: VMChatRow// = VMChatRow(senderId: "1")
+    @ObservedObject var chatRowVM: ChatRowVM// = VMChatRow(senderId: "1")
     
     
     
@@ -31,11 +31,11 @@ struct ChatView : View {
                 }
             }*/
             
-            List(chatController.messages){ msg in
+            List(chatRowVM.messages){ msg in
                 ChatRowView(chatMessage: msg)
             }
             .onAppear(){
-                self.chatController.fetchData()
+                self.chatRowVM.fetchData()
             }
             
             // TextField are aligned with the Send Button in the same line so we put them in HStack
@@ -44,7 +44,7 @@ struct ChatView : View {
                 TextField("Message...", text: $composedMessage).frame(minHeight: CGFloat(30))
                 // the button triggers the sendMessage() function written in the end of current View
                 Button(action: {
-                    self.chatController.sendMessage(ChatMessageModel(senderId: self.senderId, message: self.composedMessage, avatar: "C", isMe: true))
+                    self.chatRowVM.sendMessage(ChatMessageModel(message: self.composedMessage, avatar: "C"))
                     self.composedMessage = ""
                 }) {
                     Text("Send")

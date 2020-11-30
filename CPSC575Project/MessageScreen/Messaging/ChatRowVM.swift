@@ -16,7 +16,7 @@ import FirebaseFirestoreSwift
 
 // ChatController needs to be a ObservableObject in order
 // to be accessible by SwiftUI
-class VMChatRow : ObservableObject {
+class ChatRowVM : ObservableObject {
     // didChange will let the SwiftUI know that some changes have happened in this object
     // and we need to rebuild all the views related to that object
     var didChange = PassthroughSubject<Void, Never>()
