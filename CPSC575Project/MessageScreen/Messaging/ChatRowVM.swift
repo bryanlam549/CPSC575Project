@@ -164,9 +164,9 @@ class ChatRowVM : ObservableObject {
                 
         }
         
-        db.collection("chats")
+        /*db.collection("chats")
             .order(by: "createdTime", descending: false)
-            .whereField("users", arrayContains: userId as Any)
+            .whereField("users", arrayContains: userId as Any)*/
         //.whereField("users", arrayContains: senderId as Any)
         
         

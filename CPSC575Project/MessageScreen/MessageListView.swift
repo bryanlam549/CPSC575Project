@@ -39,6 +39,7 @@
                             
                             ForEach(messageListVM.messageCellVM) { messageCellVM in
                                 MessagesCell(messageCellVM: messageCellVM)
+                                
                                 //TaskCell(taskCellVM: taskCellVM)
                             }
                             

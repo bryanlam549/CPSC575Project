@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 class MessageCellVM: ObservableObject, Identifiable {
-    @Published var userRepository = UserRepository()
+    //@Published var userRepository = UserRepository()
     @Published var messageCell: MessagesCellModel
     
     var uid = ""
