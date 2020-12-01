@@ -14,82 +14,95 @@ struct ContentView: View {
 	//@ObservedObject var model = LoginSignUpModel()
 	@EnvironmentObject var model: LoginSignUpModel
 	@State private var selection = 0
+	
+	
+	@State var buttClickTest = false
+	@State var chatId: String = ""
+	@State var msgCellVM: MessageCellVM? = nil
+	
+	
 	var body: some View {
 		ZStack{
-			if model.logInstatus {
-				TabView(selection: $selection){
-					ProfileView()
-						.font(.title)
-						.tabItem {
-							VStack {
-								Image(systemName: "person.fill")
-								Text("Profile")
-							}
-					}
-					.tag(0)
-					
-					
-					
-					MatchView()
-						.font(.title)
-						.tabItem {
-							VStack {
-								Image(systemName: "heart.fill")
-								Text("Heart")
-							}
-					}
-					.tag(1)
-					
-					
-					
-					MessageListView()
-						.font(.title)
-						.tabItem {
-							VStack {
-								Image(systemName: "message.fill")
-								Text("Messages")
-							}
-					}
-					.tag(2)
-					
-					TestView()
-						.font(.title)
-						.tabItem {
-							VStack {
-								Image(systemName: "rectangle.fill")
-								Text("Test!!")
-							}
-					}
-					.tag(3)
-				}
-			}
-			else{
-				VStack{
-					
-					Image(systemName: "heart")
-						.resizable()
-						.frame(width: 200, height: 180)
-					
-					HStack{
-						
-						Button(action: {
-							self.model.isSignUp = false
-						}){
-							Text("Existing")
+			if buttClickTest {
+				ChatView(senderId: msgCellVM!.uid, chatRowVM: ChatRowVM(senderId: msgCellVM!.uid), buttonPressed: $buttClickTest)
+				//ChatView(senderId: msgCellVM!.uid, chatRowVM: ChatRowVM(senderId: msgCellVM!.uid))
+			}else{
+				if model.logInstatus {
+					TabView(selection: $selection){
+						ProfileView()
+							.font(.title)
+							.tabItem {
+								VStack {
+									Image(systemName: "person.fill")
+									Text("Profile")
+								}
 						}
+						.tag(0)
 						
-						Button(action: {
-							self.model.isSignUp = true
-						}){
-							Text("New")
+						
+						
+						MatchView()
+							.font(.title)
+							.tabItem {
+								VStack {
+									Image(systemName: "heart.fill")
+									Text("Heart")
+								}
 						}
-					}
-					if self.model.isSignUp{
-						SignUpView()
-					}else{
-						LoginView()
+						.tag(1)
+						
+						
+						
+						MessageListView(buttonPressed: $buttClickTest, chatId: $chatId, messageCellVM: $msgCellVM)
+							.font(.title)
+							.tabItem {
+								VStack {
+									Image(systemName: "message.fill")
+									Text("Messages")
+								}
+						}
+						.tag(2)
+						
+						TestView()
+							.font(.title)
+							.tabItem {
+								VStack {
+									Image(systemName: "rectangle.fill")
+									Text("Test!!")
+								}
+						}
+						.tag(3)
 					}
 				}
+				else{
+					VStack{
+						
+						Image(systemName: "heart")
+							.resizable()
+							.frame(width: 200, height: 180)
+						
+						HStack{
+							
+							Button(action: {
+								self.model.isSignUp = false
+							}){
+								Text("Existing")
+							}
+							
+							Button(action: {
+								self.model.isSignUp = true
+							}){
+								Text("New")
+							}
+						}
+						if self.model.isSignUp{
+							SignUpView()
+						}else{
+							LoginView()
+						}
+					}
+				}
+				
 			}
 		}
 	}
@@ -97,8 +110,8 @@ struct ContentView: View {
 
 
 //Provides preview screen
-struct ContentView_Previews: PreviewProvider {
+/*struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
 		ContentView()
 	}
-}
+}*/
