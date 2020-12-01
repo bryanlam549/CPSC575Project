@@ -19,11 +19,13 @@ struct NewMatchesCell: View {
                 .resizable()
                 .renderingMode(.original)
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 110, height: 110, alignment: .center)
-                .cornerRadius(55)
+                .frame(width: 100, height: 100, alignment: .center)
+                .cornerRadius(50)
             Text(name)
-                .foregroundColor(.secondary)
                 .fontWeight(.bold)
+                .padding(.bottom, 10)
+                .foregroundColor(.primary)
+                //.fontWeight(.bold)
         }
         
     }

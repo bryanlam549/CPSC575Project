@@ -12,7 +12,7 @@ import Firebase
 
 
 class LoginSignUpModel : ObservableObject{
-    @Published var userRepository = UserRepository()
+    var userRepository = UserRepository()
     @Published var mail = ""
     @Published var pass = ""
     @Published var isSignUp = false

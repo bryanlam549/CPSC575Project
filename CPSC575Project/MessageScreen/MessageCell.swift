@@ -16,20 +16,29 @@ struct MessagesCell: View {
     //var image: String
     //var message: String
     var body: some View {
-        HStack {
-            Image(messageCellVM.image)
-                .resizable()
-                .renderingMode(.original)
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 100, height: 100, alignment: .center)
-                .cornerRadius(50)
-            
-            VStack(alignment: .leading) {
-                Text(messageCellVM.name)
-                    .fontWeight(.bold)
-                    .padding(.bottom, 10)
-                Text(messageCellVM.message)
-            }.padding(10)
+        Group{
+            if (messageCellVM.message == ""){
+                NewMatchesCell(name: messageCellVM.name, image: messageCellVM.image)
+            }
+            else{
+                HStack {
+                Image(messageCellVM.image)
+                    .resizable()
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100, alignment: .center)
+                    .cornerRadius(50)
+                
+                VStack(alignment: .leading) {
+                    Text(messageCellVM.name)
+                        .fontWeight(.bold)
+                        .padding(.bottom, 10)
+                    Text(messageCellVM.message)
+                        .frame(minHeight: 50, maxHeight: 100, alignment: .topTrailing)
+                        .truncationMode(.tail)
+                }.padding(10)
+            }
+            }
         }
         
     }
