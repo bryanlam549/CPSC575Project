@@ -16,23 +16,22 @@ struct MessagesCell: View {
     //var image: String
     //var message: String
     var body: some View {
-        NavigationLink(destination: ChatView(senderId: messageCellVM.uid, chatRowVM: ChatRowVM(senderId: messageCellVM.uid))){
-            HStack {
-                Image(messageCellVM.image)
-                    .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .cornerRadius(50)
-                
-                VStack(alignment: .leading) {
-                    Text(messageCellVM.name)
-                        .fontWeight(.bold)
-                        .padding(.bottom, 10)
-                    Text(messageCellVM.message)
-                }.padding(10)
-            }
+        HStack {
+            Image(messageCellVM.image)
+                .resizable()
+                .renderingMode(.original)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 100, height: 100, alignment: .center)
+                .cornerRadius(50)
+            
+            VStack(alignment: .leading) {
+                Text(messageCellVM.name)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 10)
+                Text(messageCellVM.message)
+            }.padding(10)
         }
+        
     }
 }
 

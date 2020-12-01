@@ -11,26 +11,33 @@
         struct MessageListView: View {
             @ObservedObject var messageListVM = MessageListVM()
             //Hardcoded test values
-            let testMsgCells = testMessagesCells
+            //let testMsgCells = testMessagesCells
+            @Binding var buttonPressed: Bool
+            @Binding var chatId: String
+            @Binding var messageCellVM: MessageCellVM?
+            
             
             var body: some View {
-                NavigationView{
+                
+                Group{
                     VStack{
                         TopView()
                         ListTitleView(title: "New Matches")
                         ScrollView(.horizontal, showsIndicators: false) {
                             // NavigationLink(destination: Text("test")){
                             HStack{
+                                Button(action: {
+                                    self.buttonPressed.toggle()
+                                }) {
+                                    NewMatchesCell(name: "test1", image: "matchProfile1")
+                                }
+                                Button(action: {
+                                    self.buttonPressed.toggle()
+                                }) {
+                                    NewMatchesCell(name: "test2", image: "maleMock2")
+                                }
                                 
-                                NewMatchesCell(name: "test1", image: "matchProfile1")
-                                NewMatchesCell(name: "test2", image: "maleMock2")
-                                //For loop here, will display new matches bubbles
-                                // ForEach(0..<newMatches.count) { index in
-                                // Text(self.newMatches[index].name)
                                 
-                                
-                                //ForEach(0..<5) { _ in NewMatchesCell()
-                                //}
                             }
                         }
                         
@@ -38,27 +45,27 @@
                         List {
                             
                             ForEach(messageListVM.messageCellVM) { messageCellVM in
-                                MessagesCell(messageCellVM: messageCellVM)
-                                
-                                //TaskCell(taskCellVM: taskCellVM)
+                                Button(action: {
+                                    //self.chatId = messageCellVM.uid
+                                    self.buttonPressed.toggle()
+                                    self.messageCellVM = messageCellVM
+                                    
+                                }) {
+                                    MessagesCell(messageCellVM: messageCellVM)
+                                }
                             }
                             
-                            //For loop here, will display new matches bubbles
-                            /*ForEach(0..<testMsgCells.count) { index in
-                                MessagesCell(userId: self.testMsgCells[index].userId, name: self.testMsgCells[index].name, image: self.testMsgCells[index].image, message: self.testMsgCells[index].message)
-                            }*/
-                            //MessagesCell(name: "Jordan1", image: "maleMock3", message: "Hi! Would you like to go on hike at this...")
-                            //MessagesCell(name: "Jordan2", image: "logo", message: "Hi cutie :D :D :D!!!")
                         }
                         
-                        //For loop here
-                        //ForEach(0..<newMatches.count) { index in
-                        //  NavigationLink(destination: TestView()){
-                        // Text(self.newMatches[index].name)
                     }
                     .navigationBarTitle("")
                     .navigationBarHidden(true)
+                    
+                    
                 }
+                
+                
+                
             }
             
             
@@ -69,8 +76,8 @@
         
         
         
-        struct MessageView_Previews: PreviewProvider {
-            static var previews: some View {
-                MessageListView()
-            }
-        }
+        /*struct MessageView_Previews: PreviewProvider {
+         static var previews: some View {
+         MessageListView()
+         }
+         }*/

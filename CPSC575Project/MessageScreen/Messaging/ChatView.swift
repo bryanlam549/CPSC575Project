@@ -15,13 +15,18 @@ struct ChatView : View {
      // @State here is necessary to make the composedMessage variable accessible from different views
     @State var composedMessage: String = ""
     @ObservedObject var chatRowVM: ChatRowVM// = VMChatRow(senderId: "1")
-    
+    @Binding var buttonPressed: Bool
     
     
     var body: some View {
       
         // the VStack is a vertical stack where we place all our substacks like the List and the TextField
         VStack {
+            Button(action: {
+                self.buttonPressed.toggle()
+            }) {
+                Text("Back button")
+            }
             // I've removed the text line from here and replaced it with a list
             // List is the way you should create any list in SwiftUI
             /*List {

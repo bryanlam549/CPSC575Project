@@ -14,19 +14,18 @@ struct NewMatchesCell: View {
     var image: String
     
     var body: some View {
-        NavigationLink(destination: Text("test")){
-            VStack(alignment: .center) {
-                Image(image)
-                    .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 110, height: 110, alignment: .center)
-                    .cornerRadius(55)
-                Text(name)
-                    .foregroundColor(.secondary)
-                    .fontWeight(.bold)
-            }
+        VStack(alignment: .center) {
+            Image(image)
+                .resizable()
+                .renderingMode(.original)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 110, height: 110, alignment: .center)
+                .cornerRadius(55)
+            Text(name)
+                .foregroundColor(.secondary)
+                .fontWeight(.bold)
         }
+        
     }
 }
 
