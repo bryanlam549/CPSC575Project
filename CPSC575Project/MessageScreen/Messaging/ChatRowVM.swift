@@ -97,7 +97,9 @@ class ChatRowVM : ObservableObject {
                 let eachChannelRef = chatsRef.document(docID)
                 let messagesRef = eachChannelRef.collection("messages")
                 do{
-                    let _ = try messagesRef .addDocument(from: chatMessage)
+                    if(chatMessage.message != ""){
+                        let _ = try messagesRef.addDocument(from: chatMessage)
+                    }
                 }
                 catch{
                     print(error)

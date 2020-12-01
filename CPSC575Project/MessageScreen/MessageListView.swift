@@ -25,33 +25,39 @@
                         ListTitleView(title: "New Matches")
                         ScrollView(.horizontal, showsIndicators: false) {
                             // NavigationLink(destination: Text("test")){
-                            HStack{
-                                Button(action: {
-                                    self.buttonPressed.toggle()
-                                }) {
-                                    NewMatchesCell(name: "test1", image: "matchProfile1")
-                                }
-                                Button(action: {
-                                    self.buttonPressed.toggle()
-                                }) {
-                                    NewMatchesCell(name: "test2", image: "maleMock2")
+                            HStack(){
+                                //Text("???")
+                                ForEach(messageListVM.messageCellVM) { messageCellVM in
+                                    if (messageCellVM.message == "") {
+                                        Button(action: {
+                                            //self.chatId = messageCellVM.uid
+                                            self.buttonPressed.toggle()
+                                            self.messageCellVM = messageCellVM
+                                            
+                                        }) {
+                                            MessagesCell(messageCellVM: messageCellVM)
+                                        }
+                                    }
+                                    
                                 }
                                 
                                 
                             }
-                        }
+                        }.id(UUID().uuidString)
                         
                         ListTitleView(title: "Messages")
                         List {
                             
                             ForEach(messageListVM.messageCellVM) { messageCellVM in
-                                Button(action: {
-                                    //self.chatId = messageCellVM.uid
-                                    self.buttonPressed.toggle()
-                                    self.messageCellVM = messageCellVM
-                                    
-                                }) {
-                                    MessagesCell(messageCellVM: messageCellVM)
+                                if (messageCellVM.message != "") {
+                                    Button(action: {
+                                        //self.chatId = messageCellVM.uid
+                                        self.buttonPressed.toggle()
+                                        self.messageCellVM = messageCellVM
+                                        
+                                    }) {
+                                        MessagesCell(messageCellVM: messageCellVM)
+                                    }
                                 }
                             }
                             
@@ -64,20 +70,5 @@
                     
                 }
                 
-                
-                
             }
-            
-            
-            
         }
-        // Spacer()
-        
-        
-        
-        
-        /*struct MessageView_Previews: PreviewProvider {
-         static var previews: some View {
-         MessageListView()
-         }
-         }*/

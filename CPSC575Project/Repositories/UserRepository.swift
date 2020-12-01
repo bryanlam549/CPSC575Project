@@ -152,7 +152,7 @@ class UserRepository: ObservableObject{
                             self.matchedUsers = querySnapshot.documents.compactMap { document in
                                 do{
                                     let user = try document.data(as: User.self)
-                                    print(user?.name as Any)
+                                    //print(user?.name as Any)
                                     self.db.collection("chats")
                                         .whereField("users", in: [[userId as Any, user?.uid as Any], [user?.uid as Any, userId as Any]])
                                         .addSnapshotListener {(querySnapshot, error) in
@@ -173,20 +173,34 @@ class UserRepository: ObservableObject{
                                                     .limit(to: 1)
                                                     .addSnapshotListener {(querySnapshot, error) in
                                                         if let querySnapshot = querySnapshot {
+                                                            
+                                                            if(querySnapshot.count == 0){
+                                                                self.messageCellModel.append(MessagesCellModel(userId: user!.uid!, name: user!.name, image: user!.imageUrl1, message: ""))
+                                                                /*do{
+                                                                    let _ = try messagesRef.addDocument(from: ChatMessageModel(message: "", avatar: "c"))
+                                                                }
+                                                                catch{
+                                                                    print(error)
+                                                                }*/
+                                                                
+                                                            }
                                                             self.messageBubble = querySnapshot.documents.compactMap { document in
-                                                                //print(self.messageCellModel)
                                                                 do{
-                                                                    for i in 0..<self.messageCellModel.count{
-                                                                        print("i: ", i)
+                                                                    //Replace recent message
+                                                                    for i in 0..<self.messageCellModel.count {
                                                                         if(self.messageCellModel[i].userId == user?.uid){
-                                                                            //print(i)
                                                                             self.messageCellModel.remove(at: i)
                                                                             break
                                                                         }
                                                                     }
                                                                     
                                                                     let chatMessage = try document.data(as: ChatMessageModel.self)
+                                                                    //store results, either in either list, depending on
+                                                                    
+                                                                    
+                                                                    
                                                                     self.messageCellModel.append(MessagesCellModel(userId: user!.uid!, name: user!.name, image: user!.imageUrl1, message: chatMessage!.message))
+                                                                
                                                                     return chatMessage
                                                                 }
                                                                 catch{
