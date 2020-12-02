@@ -135,7 +135,7 @@ class ChatRowVM : ObservableObject {
                     
                     
                     messagesRef
-                        .order(by: "createdTime", descending: false)
+                        .order(by: "createdTime", descending: true)
                         
                         .addSnapshotListener {(querySnapshot, error) in
                             guard let docu = querySnapshot?.documents else{
