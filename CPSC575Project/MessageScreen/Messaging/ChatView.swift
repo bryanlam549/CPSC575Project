@@ -38,7 +38,11 @@ struct ChatView : View {
             
             List(chatRowVM.messages){ msg in
                 ChatRowView(chatMessage: msg)
+                .rotationEffect(.radians(.pi))
+                .scaleEffect(x: -1, y: 1, anchor: .center)
             }
+            .rotationEffect(.radians(.pi))
+            .scaleEffect(x: -1, y: 1, anchor: .center)
             .onAppear(){
                 self.chatRowVM.fetchData()
             }
