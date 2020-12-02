@@ -185,20 +185,22 @@ struct SwipeDetailsView : View {
     var height : CGFloat = 0
     
     var body : some View {
-        ZStack{
-            AnimatedImage(url: URL(string: image)!).resizable().cornerRadius(20).padding(.horizontal, 15)
-            
-            VStack{
-                Spacer()
-                HStack{
-                    VStack(alignment: .leading, content: {
-                        Text(name).font(.system(size: 25)).fontWeight(.heavy).foregroundColor(.white)
-                        Text(age).foregroundColor(.white)
-                    })
+        GeometryReader{ geo in
+            ZStack{
+                AnimatedImage(url: URL(string: self.image)!).resizable().aspectRatio(contentMode: .fill).frame(width: geo.size.width / 1.12, height: geo.size.height / 1.2, alignment: .center).cornerRadius(15).padding(.horizontal, 15)
+                //AnimatedImage(url: URL(string: self.image)!).resizable().aspectRatio(contentMode: .fill).frame(width: geo.size.width / 1.15, height: geo.size.height / 1.1, alignment: .center).cornerRadius(20).padding(.horizontal, 15)
+                VStack{
                     Spacer()
-                }
-            }.padding([.bottom, .leading], 35)
-        }.frame(height: height)
+                    HStack{
+                        VStack(alignment: .leading, content: {
+                            Text(self.name).font(.system(size: 25)).fontWeight(.heavy).foregroundColor(.white)
+                            Text(self.age).foregroundColor(.white)
+                        })
+                        Spacer()
+                    }
+                }.padding([.bottom, .leading], 35)
+            }.frame(height: self.height)
+        }
     }
 }
 
@@ -219,7 +221,8 @@ class observer : ObservableObject{
     @Published var last = -1
     init () {
         let db = Firestore.firestore()
-        db.collection("users").getDocuments { (snap, err) in
+        //db.collection("users").getDocuments { (snap, err) in
+        db.collection("users2").getDocuments { (snap, err) in
             if err != nil{
                 print((err?.localizedDescription)!)
                 return
@@ -227,9 +230,14 @@ class observer : ObservableObject{
             
             for i in snap!.documents {
                 let name = i.get("name") as! String
-                let age = i.get("age") as! String
-                let image = i.get("image") as! String
+                let age = "\(i.get("age"))"
+                //let image = i.get("image") as! String
+                var image = i.get("imageUrl1") as! String
+                if image == "" {
+                    image = "https://firebasestorage.googleapis.com/v0/b/cpsc575project.appspot.com/o/Profile%20Images%2Fuser-2517430.png?alt=media&token=c42c47e5-b0b2-4633-a098-156ad87f2407"
+                }
                 let id = i.documentID
+                //let id = i.get("uid") as! String
                 let status = i.get("status") as! String
                 
                 
@@ -252,7 +260,7 @@ class observer : ObservableObject{
     
     func updateDB(id : datatype, status : String) {
         let db = Firestore.firestore()
-        db.collection("users").document(id.id).updateData(["status":status]) { (err) in
+        db.collection("users2").document(id.id).updateData(["status":status]) { (err) in
         
             if err != nil{
                 print(err)
