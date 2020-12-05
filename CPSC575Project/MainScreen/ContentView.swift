@@ -24,7 +24,7 @@ struct ContentView: View {
 	var body: some View {
 		ZStack{
 			if buttClickTest {
-				ChatView(chatRowVM: ChatRowVM(senderId: msgCellVM!.uid, avatar: msgCellVM!.image), buttonPressed: $buttClickTest)
+				ChatView(chatRowVM: ChatRowVM(senderId: msgCellVM!.uid, avatar: msgCellVM!.image), backButtonPressed: $buttClickTest)
 				//ChatView(senderId: msgCellVM!.uid, chatRowVM: ChatRowVM(senderId: msgCellVM!.uid))
 			}else{
 				if model.logInstatus {
@@ -63,7 +63,7 @@ struct ContentView: View {
 						}
 						.tag(2)
 						
-						TestView()
+						/*TestView()
 							.font(.title)
 							.tabItem {
 								VStack {
@@ -71,7 +71,7 @@ struct ContentView: View {
 									Text("Test!!")
 								}
 						}
-						.tag(3)
+						.tag(3)*/
 					}
 				}
 				else{
