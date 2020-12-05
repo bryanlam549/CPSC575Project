@@ -24,7 +24,26 @@ struct ChatRowView : View {
             if chatMessage.userId != self.userId{
                 HStack {
                     Group {
-                        Text(chatMessage.avatar)
+                        //Text(chatMessage.avatar)
+                        if(chatMessage.avatar == ""){
+                            Image("person")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .clipShape(Circle())
+                                .shadow(radius: 10)
+                                .overlay(Circle().stroke(Color.blue, lineWidth: 3))
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .cornerRadius(50)
+                        }else{
+                            Image(chatMessage.avatar)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .clipShape(Circle())
+                                .shadow(radius: 10)
+                                .overlay(Circle().stroke(Color.blue, lineWidth: 3))
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .cornerRadius(50)
+                        }
                         Text(chatMessage.message)
                             .bold()
                             .padding(10)
@@ -43,7 +62,27 @@ struct ChatRowView : View {
                             .padding(10)
                             .background(Color.red)
                         .cornerRadius(10)
-                        Text(chatMessage.avatar)
+                        //Text(chatMessage.avatar)
+                        if(chatMessage.avatar == ""){
+                            //Default
+                            Image("person")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .clipShape(Circle())
+                                .shadow(radius: 10)
+                                .overlay(Circle().stroke(Color.red, lineWidth: 3))
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .cornerRadius(50)
+                        }else{
+                            Image(chatMessage.avatar)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .clipShape(Circle())
+                                .shadow(radius: 10)
+                                .overlay(Circle().stroke(Color.red, lineWidth: 3))
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .cornerRadius(50)
+                        }
                     }
                 }
             }

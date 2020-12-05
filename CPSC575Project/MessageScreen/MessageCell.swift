@@ -22,22 +22,32 @@ struct MessagesCell: View {
             }
             else{
                 HStack {
-                Image(messageCellVM.image)
-                    .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .cornerRadius(50)
-                
-                VStack(alignment: .leading) {
-                    Text(messageCellVM.name)
-                        .fontWeight(.bold)
-                        .padding(.bottom, 10)
-                    Text(messageCellVM.message)
-                        .frame(minHeight: 50, maxHeight: 100, alignment: .topTrailing)
-                        .truncationMode(.tail)
-                }.padding(10)
-            }
+                    if(messageCellVM.image == ""){
+                        Image("person")
+                            .resizable()
+                            .renderingMode(.original)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 100, alignment: .center)
+                            .cornerRadius(50)
+                    }else{
+                        Image(messageCellVM.image)
+                            .resizable()
+                            .renderingMode(.original)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 100, alignment: .center)
+                            .cornerRadius(50)
+                    }
+                    
+                    
+                    VStack(alignment: .leading) {
+                        Text(messageCellVM.name)
+                            .fontWeight(.bold)
+                            .padding(.bottom, 10)
+                        Text(messageCellVM.message)
+                            .frame(minHeight: 50, maxHeight: 100, alignment: .topTrailing)
+                            .truncationMode(.tail)
+                    }.padding(10)
+                }
             }
         }
         
@@ -45,7 +55,7 @@ struct MessagesCell: View {
 }
 
 /*struct MessagesCell_Previews: PreviewProvider {
-    static var previews: some View {
-        MessagesCell(userId: "1", name: "Jordan Test", image: "maleMock3", message: "Hi! Would you like to go on hike at this...")
-    }
-}*/
+ static var previews: some View {
+ MessagesCell(userId: "1", name: "Jordan Test", image: "maleMock3", message: "Hi! Would you like to go on hike at this...")
+ }
+ }*/

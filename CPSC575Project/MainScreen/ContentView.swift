@@ -17,14 +17,14 @@ struct ContentView: View {
 	
 	
 	@State var buttClickTest = false
-	@State var chatId: String = ""
+	//@State var chatId: String = ""
 	@State var msgCellVM: MessageCellVM? = nil
 	
 	
 	var body: some View {
 		ZStack{
 			if buttClickTest {
-				ChatView(senderId: msgCellVM!.uid, chatRowVM: ChatRowVM(senderId: msgCellVM!.uid), buttonPressed: $buttClickTest)
+				ChatView(chatRowVM: ChatRowVM(senderId: msgCellVM!.uid, avatar: msgCellVM!.image), buttonPressed: $buttClickTest)
 				//ChatView(senderId: msgCellVM!.uid, chatRowVM: ChatRowVM(senderId: msgCellVM!.uid))
 			}else{
 				if model.logInstatus {
@@ -53,7 +53,7 @@ struct ContentView: View {
 						
 						
 						
-						MessageListView(buttonPressed: $buttClickTest, chatId: $chatId, messageCellVM: $msgCellVM)
+						MessageListView(buttonPressed: $buttClickTest, messageCellVM: $msgCellVM)
 							.font(.title)
 							.tabItem {
 								VStack {
@@ -76,7 +76,6 @@ struct ContentView: View {
 				}
 				else{
 					VStack{
-						
 						Image(systemName: "heart")
 							.resizable()
 							.frame(width: 200, height: 180)

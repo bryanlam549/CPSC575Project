@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ChatView : View {
     
-    var senderId: String
+    //var senderId: String
      // @State here is necessary to make the composedMessage variable accessible from different views
     @State var composedMessage: String = ""
     @ObservedObject var chatRowVM: ChatRowVM// = VMChatRow(senderId: "1")

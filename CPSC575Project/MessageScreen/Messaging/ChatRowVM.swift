@@ -32,52 +32,35 @@ class ChatRowVM : ObservableObject {
     private var db = Firestore.firestore()
     var senderId: String
     let userId = Auth.auth().currentUser?.uid
+    var avatar: String
+    var selfUser: User? = nil
     
-    init(senderId: String){
+    init(senderId: String, avatar: String){
         self.senderId = senderId
+        self.avatar = avatar
+        getSelfUser()
+        
     }
     
-    // this function will be accessible from SwiftUI main view
-    // here you can add the necessary code to send your messages not only to the SwiftUI view, but also to the database so that other users of the app would be able to see it
-    /*func sendMessage(_ chatMessage: ChatMessageModel) {
-        
-        do{
-            let _ = try db.collection("chat").addDocument(from: chatMessage)
-        }
-        catch{
-            print(error)
-        }
-        // here we populate the messages array
-        //messages.append(chatMessage)
-        // here we let the SwiftUI know that we need to rebuild the views
-        //didChange.send(())
-    }*/
-    
-    /*func fetchData(){
-        let userId = Auth.auth().currentUser?.uid
-        
-        db.collection("chat")
-            .order(by: "createdTime", descending: false)
-            .whereField("userId", isEqualTo: userId as Any)
-            .whereField("senderId", isEqualTo: senderId as Any)
-            .addSnapshotListener {(querySnapshot, error) in
-                guard let documents = querySnapshot?.documents else{
-                    print("no documents")
+    func getSelfUser(){
+        let usersRef = self.db.collection("users2")
+        usersRef
+            .whereField("uid", isEqualTo: self.userId as Any)
+            //.getDocuments(completion: { snapshot, error in
+            .addSnapshotListener {(snapshot, error) in
+                guard let documents = snapshot?.documents else {
+                    print("Collection was empty")
                     return
                 }
                 
-                //Using a compact map so whenever we return NIL this gets filtered out by the compact map
-                self.messages = documents.compactMap{(queryDocumentSnapshot) -> ChatMessageModel? in
-                    //need to provide class of struct we want to map into
-                    return try? queryDocumentSnapshot.data(as: ChatMessageModel.self)
-                    
-                    
-                    
+                
+                var _ = documents.compactMap{(queryDocumentSnapshot) -> User? in
+                    self.selfUser = try? queryDocumentSnapshot.data(as:User.self)
+                    return self.selfUser
                 }
                 
-        }
-        
-    }*/
+            }
+    }
     
     func sendMessage(_ chatMessage: ChatMessageModel) {
         let chatsRef = self.db.collection("chats")
@@ -136,24 +119,41 @@ class ChatRowVM : ObservableObject {
                     
                     messagesRef
                         .order(by: "createdTime", descending: true)
-                        
                         .addSnapshotListener {(querySnapshot, error) in
                             guard let docu = querySnapshot?.documents else{
                                 print("no documents")
                                 return
                             }
                             
-                            /*for d in docu {
-                                
-                               //print(d.documentID)
-                                print(d.get("userId"))
-                                //print(d.data())
-                            }*/
-                            
                             //Using a compact map so whenever we return NIL this gets filtered out by the compact map
                             self.messages = docu.compactMap{(queryDocumentSnapshot) -> ChatMessageModel? in
-                                //need to provide class of struct we want to map into
-                                return try? queryDocumentSnapshot.data(as: ChatMessageModel.self)
+                                let x = try? queryDocumentSnapshot.data(as: ChatMessageModel.self)
+                                
+                                
+                                if (x?.userId == self.userId){
+                                    let usersRef = self.db.collection("users2")
+                                    usersRef
+                                        .whereField("uid", isEqualTo: self.userId as Any)
+                                        //.getDocuments(completion: { snapshot, error in
+                                        .addSnapshotListener {(snapshot, error) in
+                                            guard let documents = snapshot?.documents else {
+                                                print("Collection was empty")
+                                                return
+                                            }
+                                            
+                                            
+                                            var _ = documents.compactMap{(queryDocumentSnapshot) -> User? in
+                                                self.selfUser = try? queryDocumentSnapshot.data(as:User.self)
+                                                return self.selfUser
+                                            }
+                                            
+                                        }
+                                    return ChatMessageModel(id: x?.id ?? "", userId: x?.userId ?? "", message: x?.message ?? "", avatar: self.selfUser?.imageUrl1 ?? "person", createdTime: x?.createdTime ?? nil)
+                                }
+                                else{
+                                    //If message is from other user
+                                    return ChatMessageModel(id: x?.id ?? "", userId: x?.userId ?? "", message: x?.message ?? "", avatar: self.avatar, createdTime: x?.createdTime ?? nil)
+                                }
                                 
                                 
                                 
