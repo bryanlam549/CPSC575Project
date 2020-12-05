@@ -13,7 +13,6 @@
             //Hardcoded test values
             //let testMsgCells = testMessagesCells
             @Binding var buttonPressed: Bool
-            @Binding var chatId: String
             @Binding var messageCellVM: MessageCellVM?
             
             
