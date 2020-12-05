@@ -27,14 +27,6 @@ struct ChatView : View {
             }) {
                 Text("Back button")
             }
-            // I've removed the text line from here and replaced it with a list
-            // List is the way you should create any list in SwiftUI
-            /*List {
-                // we have several messages so we use the For Loop
-                ForEach(chatController.messages, id: \.self) { msg in
-                    ChatRowView(chatMessage: msg)
-                }
-            }*/
             
             List(chatRowVM.messages){ msg in
                 ChatRowView(chatMessage: msg)

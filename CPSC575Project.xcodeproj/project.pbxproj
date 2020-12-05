@@ -23,6 +23,7 @@
 		8144BFCD256A5596002F6800 /* UploadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8144BFCC256A5595002F6800 /* UploadImageView.swift */; };
 		81BAE30B2551201300571BDF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 81BAE30A2551201300571BDF /* SDWebImageSwiftUI */; };
 		81F25A882553BBFB005181DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F25A872553BBFB005181DC /* SceneDelegate.swift */; };
+		93367E41257B7FC5000F5613 /* FirebaseImageViewMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93367E40257B7FC5000F5613 /* FirebaseImageViewMessaging.swift */; };
 		934E6998256390850096669F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E6997256390850096669F /* UserRepository.swift */; };
 		934E699D2563CF7B0096669F /* MessageCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E699C2563CF7B0096669F /* MessageCellVM.swift */; };
 		934E699F2563CF8F0096669F /* MessageListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E699E2563CF8F0096669F /* MessageListVM.swift */; };
@@ -63,6 +64,7 @@
 		8126CAF3256B53A60057423A /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		8144BFCC256A5595002F6800 /* UploadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageView.swift; sourceTree = "<group>"; };
 		81F25A872553BBFB005181DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		93367E40257B7FC5000F5613 /* FirebaseImageViewMessaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageViewMessaging.swift; sourceTree = "<group>"; };
 		934E6997256390850096669F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		934E699C2563CF7B0096669F /* MessageCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellVM.swift; sourceTree = "<group>"; };
 		934E699E2563CF8F0096669F /* MessageListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListVM.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		93EEF04C254FF3BB002C5E18 /* MessageScreen */ = {
 			isa = PBXGroup;
 			children = (
+				93367E40257B7FC5000F5613 /* FirebaseImageViewMessaging.swift */,
 				934E699C2563CF7B0096669F /* MessageCellVM.swift */,
 				934E699E2563CF8F0096669F /* MessageListVM.swift */,
 				935184792559259C0008C282 /* Messaging */,
@@ -432,6 +435,7 @@
 				7E4DB955254A06D2002619A4 /* AppView.swift in Sources */,
 				9359653625230FF7002E8593 /* TestModel.swift in Sources */,
 				7EDB73BA254B50D500128CF3 /* NewMatchesCellModel.swift in Sources */,
+				93367E41257B7FC5000F5613 /* FirebaseImageViewMessaging.swift in Sources */,
 				8144BFCD256A5596002F6800 /* UploadImageView.swift in Sources */,
 				934E699D2563CF7B0096669F /* MessageCellVM.swift in Sources */,
 				7EDB73B7254B506E00128CF3 /* NewMatchesCell.swift in Sources */,

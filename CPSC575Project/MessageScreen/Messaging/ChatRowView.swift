@@ -26,7 +26,7 @@ struct ChatRowView : View {
                     Group {
                         //Text(chatMessage.avatar)
                         if(chatMessage.avatar == ""){
-                            Image("person")
+                            Image("profile")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .clipShape(Circle())
@@ -35,8 +35,9 @@ struct ChatRowView : View {
                                 .frame(width: 25, height: 25, alignment: .center)
                                 .cornerRadius(50)
                         }else{
-                            Image(chatMessage.avatar)
-                                .resizable()
+                            
+                            FirebaseImageViewMessage(imageURL: chatMessage.avatar)
+                                //.resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .clipShape(Circle())
                                 .shadow(radius: 10)
@@ -65,7 +66,7 @@ struct ChatRowView : View {
                         //Text(chatMessage.avatar)
                         if(chatMessage.avatar == ""){
                             //Default
-                            Image("person")
+                            Image("profile")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .clipShape(Circle())
@@ -74,8 +75,8 @@ struct ChatRowView : View {
                                 .frame(width: 25, height: 25, alignment: .center)
                                 .cornerRadius(50)
                         }else{
-                            Image(chatMessage.avatar)
-                                .resizable()
+                            FirebaseImageViewMessage(imageURL: chatMessage.avatar)
+                                //.resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .clipShape(Circle())
                                 .shadow(radius: 10)

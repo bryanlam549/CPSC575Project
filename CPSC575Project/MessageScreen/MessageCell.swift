@@ -22,17 +22,19 @@ struct MessagesCell: View {
             }
             else{
                 HStack {
+                    //I should check if image is in our database or not
                     if(messageCellVM.image == ""){
-                        Image("person")
+                        //FirebaseImageView(imageURL: messageCellVM.image)
+                        Image("profile")
                             .resizable()
                             .renderingMode(.original)
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 100, height: 100, alignment: .center)
                             .cornerRadius(50)
                     }else{
-                        Image(messageCellVM.image)
-                            .resizable()
-                            .renderingMode(.original)
+                        FirebaseImageViewMessage(imageURL: messageCellVM.image)
+                            //.resizable()
+                            //.renderingMode(.original)
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 100, height: 100, alignment: .center)
                             .cornerRadius(50)
