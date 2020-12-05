@@ -25,7 +25,9 @@ struct MatchView: View {
                 //Spacer().frame(height: 30)
                 //TopMatchView()
                 SwipeMatchView()
-                BottomMatchView()
+                Spacer()
+                BottomMatchView().padding(.bottom)
+                Spacer()
             }
         }
     }
@@ -71,68 +73,106 @@ struct BottomMatchView : View {
     @EnvironmentObject var obs : observer
     var body : some View{
         HStack{
-            Button(action:{
-                if self.obs.last != -1 {
-                    self.obs.updateDB(id: self.obs.users[self.obs.last], status: "")
-                }
-            }) {
-                    Image("reload").resizable().frame(width: 25, height: 25).padding()}
-                    .foregroundColor(.yellow)
-                    .background(Color.white)
-                    .shadow(radius: 25)
-                    .clipShape(Circle())
+            Spacer()
+            //Redo button commented out
+//            Button(action:{
+//                if self.obs.last != -1 {
+//                    //self.obs.updateDB(id: self.obs.users[self.obs.last], status: "")
+//                    //self.obs.goBack(index: self.obs.last)
+//                }
+//            }) {
+//                    Image("reload").resizable().frame(width: 25, height: 25).padding()}
+//                    .foregroundColor(.yellow)
+//                    .background(Color.white)
+//                    .shadow(radius: 25)
+//                    .clipShape(Circle())
+//
+            
+            // Clear button commented out for now
+//            Button(action:{
+//                //current = self.obs.last
+//                if self.obs.last == -1 {
+//                    //self.obs.updateDB(id: self.obs.users[self.obs.users.count-1], status: "reject")
+//                    self.obs.updateDB(id: self.obs.users[self.obs.users.count-1], status: "reject")
+//                    //before swipe
+//                    print("bug testing: before swipe")
+//                }
+//                else {
+//                    //self.obs.updateDB(id: self.obs.users[self.obs.last-1], status: "reject")
+//                    self.obs.updateDB(id: self.obs.users[self.obs.last], status: "reject")
+//                    //after swipe
+//                    print("bug testing: after swipe")
+//                }
+//            }) {
+//                    Image("clear").resizable().frame(width: 30, height: 30).padding()}
+//                    .foregroundColor(.pink)
+//                    .background(Color.white)
+//                    .shadow(radius: 25)
+//                    .clipShape(Circle())
+                Button(action:{
+    
+                }) {
+                    Image("pointing-left").resizable().frame(width: 50, height: 50).padding(.bottom)}
+                        .foregroundColor(.red)
+                        //.background(Color.white)
+                        //.shadow(radius: 25)
+                        //.clipShape(Circle())
+            Spacer()
+//            Button(action:{
+//
+//            }) {
+//                    Image("star").resizable().frame(width: 25, height: 25).padding()}
+//                    .foregroundColor(.blue)
+//                    .background(Color.white)
+//                    .shadow(radius: 25)
+//                    .clipShape(Circle())
+
+            
+            // Heart button commented out for now
+//            Button(action:{
+//                if self.obs.last == -1 {
+//                    //self.obs.updateDB(id: self.obs.users[self.obs.users.count-1], status: "liked")
+//                    self.obs.updateDB(id: self.obs.users[self.obs.users.count-1], status: "liked")
+//                    //before swipe
+//                    print("bug testing: before swipe")
+//                }
+//                else {
+//                    //self.obs.updateDB(id: self.obs.users[self.obs.last-1], status: "liked")
+//                    self.obs.updateDB(id: self.obs.users[self.obs.last], status: "liked")
+//                    //after swipe
+//                    print("bug testing: after swipe")
+//                }
+//            }) {
+//                    Image("heart").resizable().frame(width: 35, height: 35).padding()}
+//                    .foregroundColor(.blue)
+//                    .background(Color.white)
+//                    .shadow(radius: 25)
+//                    .clipShape(Circle())
             
             Button(action:{
-                if self.obs.last == -1 {
-                    self.obs.updateDB(id: self.obs.users[self.obs.users.count-1], status: "reject")
-                }
-                else {
-                    self.obs.updateDB(id: self.obs.users[self.obs.last-1], status: "reject")
-                }
-            }) {
-                    Image("clear").resizable().frame(width: 30, height: 30).padding()}
-                    .foregroundColor(.pink)
-                    .background(Color.white)
-                    .shadow(radius: 25)
-                    .clipShape(Circle())
-            
-            Button(action:{
-                
-            }) {
-                    Image("star").resizable().frame(width: 25, height: 25).padding()}
-                    .foregroundColor(.blue)
-                    .background(Color.white)
-                    .shadow(radius: 25)
-                    .clipShape(Circle())
-            
-            Button(action:{
-                if self.obs.last == -1 {
-                    self.obs.updateDB(id: self.obs.users[self.obs.users.count-1], status: "liked")
-                }
-                else {
-                    self.obs.updateDB(id: self.obs.users[self.obs.last-1], status: "liked")
-                }
-            }) {
-                    Image("heart").resizable().frame(width: 35, height: 35).padding()}
-                    .foregroundColor(.blue)
-                    .background(Color.white)
-                    .shadow(radius: 25)
-                    .clipShape(Circle())
-            
-            Button(action:{
-                
-            }) {
-                    Image("current").resizable().frame(width: 25, height: 25).padding()}
-                    .foregroundColor(.purple)
-                    .background(Color.white)
-                    .shadow(radius: 25)
-                    .clipShape(Circle())
+
+                }) {
+                    Image("pointing-right").resizable().frame(width: 50, height: 50).padding(.bottom)}
+                        .foregroundColor(.green)
+                        //.background(Color.white)
+                        //.shadow(radius: 25)
+                        //.clipShape(Circle())
+            Spacer()
+//            Button(action:{
+//
+//            }) {
+//                    Image("current").resizable().frame(width: 25, height: 25).padding()}
+//                    .foregroundColor(.purple)
+//                    .background(Color.white)
+//                    .shadow(radius: 25)
+//                    .clipShape(Circle())
         }
     }
 }
 
 struct SwipeMatchView : View{
     @EnvironmentObject var obser : observer
+    let uid = userID()
     var body : some View {
         
         GeometryReader{geo in
@@ -152,7 +192,8 @@ struct SwipeMatchView : View{
                                 if i.swipe > geo.size.width / 2 - 80 {
                                     //liked
                                     self.obser.update(id: i, value: 500, degree: 0)
-                                    self.obser.updateDB(id: i, status: "liked")
+                                    self.obser.updateDB(id: i, status: "liked", swiperUID: self.uid)
+                                    print(self.uid)
                                 }
                                 else{
                                     self.obser.update(id: i, value: 0, degree: 0)
@@ -162,7 +203,8 @@ struct SwipeMatchView : View{
                                 if -i.swipe > geo.size.width / 2 - 80 {
                                     //reject
                                     self.obser.update(id: i, value: -500, degree: 0)
-                                    self.obser.updateDB(id: i, status: "reject")
+                                    self.obser.updateDB(id: i, status: "rejected", swiperUID: self.uid)
+                                    print(self.uid)
                                 }
                                 else{
                                     self.obser.update(id: i, value: 0, degree: 0)
@@ -239,9 +281,9 @@ class observer : ObservableObject{
                 let id = i.documentID
                 //let id = i.get("uid") as! String
                 let status = i.get("status") as! String
-                
-                
-                if status == ""{
+                let liked = i.get("liked") as! [String]
+                let rejected = i.get("rejected") as! [String]
+                if !liked.contains(userID()) && !rejected.contains(userID()) {
                     self.users.append(datatype(id: id, name: name, image: image, age: age, swipe: 0, degree: 0))
                 }
             }
@@ -258,8 +300,10 @@ class observer : ObservableObject{
         }
     }
     
-    func updateDB(id : datatype, status : String) {
+    
+    func updateDB(id : datatype, status : String, swiperUID: String) {
         let db = Firestore.firestore()
+        db.collection("users2").document(id.id).updateData([status: FieldValue.arrayUnion([swiperUID])])
         db.collection("users2").document(id.id).updateData(["status":status]) { (err) in
         
             if err != nil{
@@ -273,7 +317,7 @@ class observer : ObservableObject{
                     if status == "liked" {
                         self.users[i].swipe = 500
                     }
-                    else if status == "reject" {
+                    else if status == "rejected" {
                         self.users[i].swipe = -500
                     }
                     else{
