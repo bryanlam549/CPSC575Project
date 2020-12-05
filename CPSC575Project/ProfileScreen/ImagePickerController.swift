@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 import FirebaseStorage
 import Combine
 
@@ -70,6 +71,8 @@ struct imagePicker: UIViewControllerRepresentable {
                 downloadedProfileImage = true
                 print(downloadedProfileImage)
                 self.parent.imageURL = "\(url!)"
+                print(self.parent.imageURL)
+                updateImageInDB(url: self.parent.imageURL)
                 self.parent.shown.toggle()
                 
                 self.listOfImageFile()
@@ -106,4 +109,27 @@ struct imagePicker: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<imagePicker>) {
     }
+}
+
+func updateImageInDB(url : String) {
+    let db = Firestore.firestore()
+    let users = db.collection("users2")
+    users.whereField("uid", isEqualTo: userID()).limit(to: 1).getDocuments(completion: {
+        querySnapshot, error in
+        if let err = error {
+            print(err.localizedDescription)
+            return
+        }
+        
+        guard let docs = querySnapshot?.documents else {return}
+        
+        for doc in docs {
+            let docId = doc.documentID
+            let name = doc.get("name")
+            print(docId, name)
+            
+            let ref = doc.reference
+            ref.updateData(["imageUrl1": url])
+        }
+    })
 }
