@@ -16,6 +16,9 @@
             @State var shown = false
             @State var imageURL = ""
             @State var settingsButton = false
+            @State var user: User? = nil
+            
+            
             func loadImageFromFirebase() {
                 let storage = Storage.storage().reference(withPath: FILE_NAME)
                 storage.downloadURL { (url, error) in
@@ -48,6 +51,14 @@
                             //Assign ids of users you've been matched to
                             for d in docu {
                                 let docID = d.documentID
+                                //let x = try document.data(as: User.self)
+                                do{
+                                    self.user = try d.data(as: User.self)
+                                }
+                                catch{
+                                    print(error)
+                                }
+                                
                                 usersRef.document(docID).updateData(["imageUrl1": self.imageURL]) { (err) in
                                     
                                     if err != nil{
@@ -120,7 +131,7 @@
                                     VStack{
                                         HStack{
                                             VStack(alignment: .leading, spacing: 10) {
-                                                Text("Jane, 22")
+                                                Text((self.user?.name ?? "") + ", " + "\(self.user?.age ?? 18)")
                                             }
                                             .padding(10)
                                                 //.padding(.top,30)
@@ -134,8 +145,9 @@
                                                 .cornerRadius(10)
                                         }.padding(10)
                                             .padding(.top, 30)
-                                        Text("Hi, I'm Jane. I'm a business student at the University of Calgary. I love my dogs, travelling and staying active. If we match, feel free to contact me!").padding(10).font(Font.system(size:18, design: .default))
-                                        //Spacer()
+                                        Text(self.user?.bio ?? "")
+                                            .padding(10)
+                                            .font(Font.system(size:18, design: .default))
                                     }
                                     .background(Blurview())
                                     .clipShape(BottomShape())
