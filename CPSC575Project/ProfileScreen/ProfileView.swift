@@ -15,6 +15,7 @@
             @EnvironmentObject var model: LoginSignUpModel // for testing
             @State var shown = false
             @State var imageURL = ""
+            @State var settingsButton = false
             func loadImageFromFirebase() {
                 let storage = Storage.storage().reference(withPath: FILE_NAME)
                 storage.downloadURL { (url, error) in
@@ -67,7 +68,10 @@
             var body: some View {
                 VStack{
                     //TopView().padding(.bottom)
-                    ZStack{
+                    if(settingsButton){
+                        SignOut(backButtonPressed: $settingsButton)
+                    }else{
+                        ZStack{
                         //Image("profile").resizable().edgesIgnoringSafeArea(.all).blur(radius: 80)
                         GeometryReader { geo in
                             VStack {
@@ -159,7 +163,7 @@
                                     HStack{
                                         ZStack{
                                             Button(action: {
-                                                
+                                                self.settingsButton.toggle()
                                             }) {
                                                 Image("gear")
                                                     .renderingMode(.original)
@@ -192,6 +196,7 @@
                                 }
                             }
                         }.padding(10)
+                    }
                     }
                     
                     //                    func profileEditButtonTapped() {

@@ -15,7 +15,7 @@ struct ChatView : View {
      // @State here is necessary to make the composedMessage variable accessible from different views
     @State var composedMessage: String = ""
     @ObservedObject var chatRowVM: ChatRowVM// = VMChatRow(senderId: "1")
-    @Binding var buttonPressed: Bool
+    @Binding var backButtonPressed: Bool
     
     
     var body: some View {
@@ -23,7 +23,7 @@ struct ChatView : View {
         // the VStack is a vertical stack where we place all our substacks like the List and the TextField
         VStack {
             Button(action: {
-                self.buttonPressed.toggle()
+                self.backButtonPressed.toggle()
             }) {
                 Text("Back button")
             }
