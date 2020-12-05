@@ -20,7 +20,7 @@
 		8126CAF4256B53A60057423A /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126CAF3256B53A60057423A /* ImagePickerController.swift */; };
 		8144BFC9256372A9002F6800 /* ChatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9351847C255925EE0008C282 /* ChatRowView.swift */; };
 		8144BFCD256A5596002F6800 /* UploadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8144BFCC256A5595002F6800 /* UploadImageView.swift */; };
-		81BAE30B2551201300571BDF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 81BAE30A2551201300571BDF /* SDWebImageSwiftUI */; };
+		81BAE30B2551201300571BDF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 81BAE30A2551201300571BDF /* SwiftPackageProductDependency */; };
 		81F25A882553BBFB005181DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F25A872553BBFB005181DC /* SceneDelegate.swift */; };
 		93367E41257B7FC5000F5613 /* FirebaseImageViewMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93367E40257B7FC5000F5613 /* FirebaseImageViewMessaging.swift */; };
 		93367E43257B8DB8000F5613 /* SignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93367E42257B8DB8000F5613 /* SignOut.swift */; };
@@ -45,11 +45,10 @@
 		93EEF053254FFADB002C5E18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93EEF052254FFADB002C5E18 /* Assets.xcassets */; };
 		93FEBEE32545F31A00FD5D04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FEBEE22545F31A00FD5D04 /* User.swift */; };
 		93FEBF0A2546258B00FD5D04 /* LoginSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FEBF092546258B00FD5D04 /* LoginSignUpView.swift */; };
-		BA9ACE053BCA1BB65E36CA2D /* Pods_CPSC575Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992FDBC7AB2E4C92CD2DA309 /* Pods_CPSC575Project.framework */; };
+		F3DC74054D5069729B677CEA /* Pods_CPSC575Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F94602C20A89792AC5CB929 /* Pods_CPSC575Project.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4BFF7A80D2D533B6FE83C048 /* Pods-CPSC575Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPSC575Project.release.xcconfig"; path = "Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project.release.xcconfig"; sourceTree = "<group>"; };
 		7E4DB954254A06D2002619A4 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		7E4DB957254A06ED002619A4 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		7E4DB95A254A070A002619A4 /* TopTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTitle.swift; sourceTree = "<group>"; };
@@ -59,10 +58,12 @@
 		7EDB73B3254B4EBC00128CF3 /* MessagesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCellModel.swift; sourceTree = "<group>"; };
 		7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesCell.swift; sourceTree = "<group>"; };
 		7EDB73BC254B515A00128CF3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		7F94602C20A89792AC5CB929 /* Pods_CPSC575Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPSC575Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8126CAF1256B51CA0057423A /* FirebaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageView.swift; sourceTree = "<group>"; };
 		8126CAF3256B53A60057423A /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		8144BFCC256A5595002F6800 /* UploadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageView.swift; sourceTree = "<group>"; };
 		81F25A872553BBFB005181DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8BD87D8B795422FC50674F41 /* Pods-CPSC575Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPSC575Project.release.xcconfig"; path = "Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project.release.xcconfig"; sourceTree = "<group>"; };
 		93367E40257B7FC5000F5613 /* FirebaseImageViewMessaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageViewMessaging.swift; sourceTree = "<group>"; };
 		93367E42257B8DB8000F5613 /* SignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
 		934E6997256390850096669F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -89,8 +90,7 @@
 		93EEF052254FFADB002C5E18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93FEBEE22545F31A00FD5D04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		93FEBF092546258B00FD5D04 /* LoginSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpView.swift; sourceTree = "<group>"; };
-		964C9650CF46B9853955243E /* Pods-CPSC575Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPSC575Project.debug.xcconfig"; path = "Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project.debug.xcconfig"; sourceTree = "<group>"; };
-		992FDBC7AB2E4C92CD2DA309 /* Pods_CPSC575Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPSC575Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8DDDA0603012ADD3284A1F1 /* Pods-CPSC575Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPSC575Project.debug.xcconfig"; path = "Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,18 +98,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81BAE30B2551201300571BDF /* SDWebImageSwiftUI in Frameworks */,
-				BA9ACE053BCA1BB65E36CA2D /* Pods_CPSC575Project.framework in Frameworks */,
+				81BAE30B2551201300571BDF /* BuildFile in Frameworks */,
+				F3DC74054D5069729B677CEA /* Pods_CPSC575Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0733C9056440D4F7E314C662 /* Frameworks */ = {
+		8C5778DB3189AE964622B4DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				992FDBC7AB2E4C92CD2DA309 /* Pods_CPSC575Project.framework */,
+				7F94602C20A89792AC5CB929 /* Pods_CPSC575Project.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,7 +139,7 @@
 				93AE5AB02523056700F8C49A /* CPSC575Project */,
 				93AE5AAF2523056700F8C49A /* Products */,
 				B648E5D0014208FD8574C049 /* Pods */,
-				0733C9056440D4F7E314C662 /* Frameworks */,
+				8C5778DB3189AE964622B4DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -284,8 +284,8 @@
 		B648E5D0014208FD8574C049 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				964C9650CF46B9853955243E /* Pods-CPSC575Project.debug.xcconfig */,
-				4BFF7A80D2D533B6FE83C048 /* Pods-CPSC575Project.release.xcconfig */,
+				B8DDDA0603012ADD3284A1F1 /* Pods-CPSC575Project.debug.xcconfig */,
+				8BD87D8B795422FC50674F41 /* Pods-CPSC575Project.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -297,11 +297,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93AE5AC22523056800F8C49A /* Build configuration list for PBXNativeTarget "CPSC575Project" */;
 			buildPhases = (
-				01C2D57EE90CF80B93CD8E51 /* [CP] Check Pods Manifest.lock */,
+				B833AABBD0F904561A53A95B /* [CP] Check Pods Manifest.lock */,
 				93AE5AAA2523056700F8C49A /* Sources */,
 				93AE5AAB2523056700F8C49A /* Frameworks */,
 				93AE5AAC2523056700F8C49A /* Resources */,
-				AA24C85B5096A9702B4B0B96 /* [CP] Embed Pods Frameworks */,
+				2113D4EC633F29921C9467CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,7 +309,7 @@
 			);
 			name = CPSC575Project;
 			packageProductDependencies = (
-				81BAE30A2551201300571BDF /* SDWebImageSwiftUI */,
+				81BAE30A2551201300571BDF /* SwiftPackageProductDependency */,
 			);
 			productName = CPSC575Project;
 			productReference = 93AE5AAE2523056700F8C49A /* CPSC575Project.app */;
@@ -340,7 +340,7 @@
 			);
 			mainGroup = 93AE5AA52523056700F8C49A;
 			packageReferences = (
-				81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				81BAE3092551201300571BDF /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 93AE5AAF2523056700F8C49A /* Products */;
 			projectDirPath = "";
@@ -366,7 +366,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01C2D57EE90CF80B93CD8E51 /* [CP] Check Pods Manifest.lock */ = {
+		2113D4EC633F29921C9467CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B833AABBD0F904561A53A95B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -386,23 +403,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AA24C85B5096A9702B4B0B96 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CPSC575Project/Pods-CPSC575Project-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -578,7 +578,7 @@
 		};
 		93AE5AC32523056800F8C49A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 964C9650CF46B9853955243E /* Pods-CPSC575Project.debug.xcconfig */;
+			baseConfigurationReference = B8DDDA0603012ADD3284A1F1 /* Pods-CPSC575Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -599,7 +599,7 @@
 		};
 		93AE5AC42523056800F8C49A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BFF7A80D2D533B6FE83C048 /* Pods-CPSC575Project.release.xcconfig */;
+			baseConfigurationReference = 8BD87D8B795422FC50674F41 /* Pods-CPSC575Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -642,7 +642,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+		81BAE3092551201300571BDF /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
@@ -653,9 +653,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		81BAE30A2551201300571BDF /* SDWebImageSwiftUI */ = {
+		81BAE30A2551201300571BDF /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 81BAE3092551201300571BDF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			package = 81BAE3092551201300571BDF /* RemoteSwiftPackageReference */;
 			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */

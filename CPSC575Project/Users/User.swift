@@ -30,4 +30,8 @@ struct User: Codable, Identifiable {
     var minSeekingAge: Int = 18
     var maxSeekingAge: Int = 50
     
+    var rejected = [String]()
+    var liked = [String]()
+    var status = ""
+    
 }

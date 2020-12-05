@@ -244,7 +244,7 @@
         }
         
         func userID() -> String {
-            let userID : String = (Auth.auth().currentUser?.uid)!
+            let userID : String = Auth.auth().currentUser?.uid ?? ""//(Auth.auth().currentUser?.uid)!
             return(userID)
         }
         
