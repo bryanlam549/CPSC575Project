@@ -283,7 +283,8 @@ class observer : ObservableObject{
                 let status = i.get("status") as! String
                 let liked = i.get("liked") as! [String]
                 let rejected = i.get("rejected") as! [String]
-                if !liked.contains(userID()) && !rejected.contains(userID()) {
+                let uid = i.get("uid") as! String
+                if !liked.contains(userID()) && !rejected.contains(userID()) && userID() != uid {
                     self.users.append(datatype(id: id, name: name, image: image, age: age, swipe: 0, degree: 0))
                 }
             }
