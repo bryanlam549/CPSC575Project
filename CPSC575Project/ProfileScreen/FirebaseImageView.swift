@@ -23,6 +23,7 @@ struct FirebaseImageView: View {
         GeometryReader { geo in
             VStack {
                 Image(uiImage: self.image).resizable()
+                .renderingMode(.original)
                 .frame(width: geo.size.width / 1.36, height: geo.size.width / 1.36, alignment: .center)
                     .cornerRadius((geo.size.width / 1.36) / 2)
             }.onReceive(self.imageLoader.didChange) { data in

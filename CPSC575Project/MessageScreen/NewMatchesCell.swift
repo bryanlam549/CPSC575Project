@@ -15,12 +15,20 @@ struct NewMatchesCell: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            Image(image)
-                .resizable()
-                .renderingMode(.original)
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 100, height: 100, alignment: .center)
-                .cornerRadius(50)
+            if(image == ""){
+                Image("profile")
+                    .resizable()
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100, alignment: .center)
+                    .cornerRadius(50)
+            }else{
+                FirebaseImageViewMessage(imageURL: image)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100, alignment: .center)
+                    .cornerRadius(50)
+            }
+            
             Text(name)
                 .fontWeight(.bold)
                 .padding(.bottom, 10)
