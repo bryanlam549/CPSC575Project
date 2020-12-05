@@ -15,7 +15,6 @@
 		7EDB73B1254B4E1800128CF3 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B0254B4E1800128CF3 /* MessageCell.swift */; };
 		7EDB73B4254B4EBC00128CF3 /* MessagesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B3254B4EBC00128CF3 /* MessagesCellModel.swift */; };
 		7EDB73B7254B506E00128CF3 /* NewMatchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */; };
-		7EDB73BA254B50D500128CF3 /* NewMatchesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */; };
 		7EDB73BD254B515A00128CF3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB73BC254B515A00128CF3 /* MainTabView.swift */; };
 		8126CAF2256B51CA0057423A /* FirebaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126CAF1256B51CA0057423A /* FirebaseImageView.swift */; };
 		8126CAF4256B53A60057423A /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126CAF3256B53A60057423A /* ImagePickerController.swift */; };
@@ -58,7 +57,6 @@
 		7EDB73B0254B4E1800128CF3 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		7EDB73B3254B4EBC00128CF3 /* MessagesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCellModel.swift; sourceTree = "<group>"; };
 		7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesCell.swift; sourceTree = "<group>"; };
-		7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesCellModel.swift; sourceTree = "<group>"; };
 		7EDB73BC254B515A00128CF3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		8126CAF1256B51CA0057423A /* FirebaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageView.swift; sourceTree = "<group>"; };
 		8126CAF3256B53A60057423A /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 				934E699E2563CF8F0096669F /* MessageListVM.swift */,
 				935184792559259C0008C282 /* Messaging */,
 				7EDB73B6254B506E00128CF3 /* NewMatchesCell.swift */,
-				7EDB73B9254B50D500128CF3 /* NewMatchesCellModel.swift */,
 				7EDB73B0254B4E1800128CF3 /* MessageCell.swift */,
 				7EDB73B3254B4EBC00128CF3 /* MessagesCellModel.swift */,
 				9388B961253CE41200F01654 /* MessageListView.swift */,
@@ -434,7 +431,6 @@
 				934E699F2563CF8F0096669F /* MessageListVM.swift in Sources */,
 				7E4DB955254A06D2002619A4 /* AppView.swift in Sources */,
 				9359653625230FF7002E8593 /* TestModel.swift in Sources */,
-				7EDB73BA254B50D500128CF3 /* NewMatchesCellModel.swift in Sources */,
 				93367E41257B7FC5000F5613 /* FirebaseImageViewMessaging.swift in Sources */,
 				8144BFCD256A5596002F6800 /* UploadImageView.swift in Sources */,
 				934E699D2563CF7B0096669F /* MessageCellVM.swift in Sources */,

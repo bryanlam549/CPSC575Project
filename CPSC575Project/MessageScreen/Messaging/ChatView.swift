@@ -45,7 +45,7 @@ struct ChatView : View {
                 TextField("Message...", text: $composedMessage).frame(minHeight: CGFloat(30))
                 // the button triggers the sendMessage() function written in the end of current View
                 Button(action: {
-                    self.chatRowVM.sendMessage(ChatMessageModel(message: self.composedMessage, avatar: "C"))
+                    self.chatRowVM.sendMessage(ChatMessageModel(message: self.composedMessage.trimmingCharacters(in: .whitespacesAndNewlines), avatar: "C"))
                     self.composedMessage = ""
                 }) {
                     Text("Send")
