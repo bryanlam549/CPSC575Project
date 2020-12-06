@@ -192,7 +192,7 @@ struct SwipeMatchView : View{
                                 if i.swipe > geo.size.width / 2 - 80 {
                                     //liked
                                     self.obser.update(id: i, value: 500, degree: 0)
-                                    self.obser.updateDB(id: i, status: "liked", swiperUID: self.uid)
+                                    self.obser.updateDB(id: i, status: "liked", swiperUID: self.uid, swipedOnUID: i.uid)
                                     print(self.uid)
                                 }
                                 else{
@@ -203,7 +203,7 @@ struct SwipeMatchView : View{
                                 if -i.swipe > geo.size.width / 2 - 80 {
                                     //reject
                                     self.obser.update(id: i, value: -500, degree: 0)
-                                    self.obser.updateDB(id: i, status: "rejected", swiperUID: self.uid)
+                                    self.obser.updateDB(id: i, status: "rejected", swiperUID: self.uid, swipedOnUID: i.uid)
                                     print(self.uid)
                                 }
                                 else{
@@ -285,7 +285,7 @@ class observer : ObservableObject{
                 let rejected = i.get("rejected") as! [String]
                 let uid = i.get("uid") as! String
                 if !liked.contains(userID()) && !rejected.contains(userID()) && userID() != uid {
-                    self.users.append(datatype(id: id, name: name, image: image, age: age, swipe: 0, degree: 0))
+                    self.users.append(datatype(id: id, name: name, image: image, age: age, swipe: 0, degree: 0, uid: uid))
                 }
             }
         }
@@ -302,8 +302,15 @@ class observer : ObservableObject{
     }
     
     
-    func updateDB(id : datatype, status : String, swiperUID: String) {
+    func updateDB(id : datatype, status : String, swiperUID: String, swipedOnUID: String) {
         let db = Firestore.firestore()
+        
+        if status == "liked" {
+            db.collection("chats").addDocument(data: [
+                "users":[swiperUID,swipedOnUID]
+            ])
+        }
+        
         db.collection("users2").document(id.id).updateData([status: FieldValue.arrayUnion([swiperUID])])
         db.collection("users2").document(id.id).updateData(["status":status]) { (err) in
         
@@ -342,4 +349,5 @@ struct datatype : Identifiable {
     var age : String
     var swipe : CGFloat
     var degree : Double
+    var uid : String
 }
