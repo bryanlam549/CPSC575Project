@@ -41,10 +41,11 @@ struct imagePicker: UIViewControllerRepresentable {
         func uploadImageToFireBase(image: UIImage) {
             // Create the file metadata
             let metadata = StorageMetadata()
+            let file_name = "Profile Images/" + userID() + ".jpg"
             metadata.contentType = "image/jpeg"
             
             // Upload the file to the path FILE_NAME
-            storage.child(FILE_NAME).putData(image.jpegData(compressionQuality: 0.42)!, metadata: metadata) { (metadata, error) in
+            storage.child(file_name).putData(image.jpegData(compressionQuality: 0.42)!, metadata: metadata) { (metadata, error) in
                 guard let metadata = metadata else {
                   // Uh-oh, an error occurred!
                   print((error?.localizedDescription)!)
@@ -61,7 +62,8 @@ struct imagePicker: UIViewControllerRepresentable {
         
         func downloadImageFromFirebase() {
             // Create a reference to the file you want to download
-            storage.child(FILE_NAME).downloadURL { (url, error) in
+            let file_name = "Profile Images/" + userID() + ".jpg"
+            storage.child(file_name).downloadURL { (url, error) in
                 if error != nil {
                     // Handle any errors
                     print((error?.localizedDescription)!)
