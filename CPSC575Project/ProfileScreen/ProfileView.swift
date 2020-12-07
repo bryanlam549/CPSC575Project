@@ -9,7 +9,7 @@
         import SwiftUI
         import Firebase
         
-        let FILE_NAME = "Profile Images/" + userID() + ".jpg"
+        //let FILE_NAME = "Profile Images/" + userID() + ".jpg"
         var downloadedProfileImage = false
         struct ProfileView: View {
             @EnvironmentObject var model: LoginSignUpModel // for testing
@@ -20,7 +20,8 @@
             
             
             func loadImageFromFirebase() {
-                let storage = Storage.storage().reference(withPath: FILE_NAME)
+                var file_name = "Profile Images/" + userID() + ".jpg"
+                let storage = Storage.storage().reference(withPath: file_name)
                 storage.downloadURL { (url, error) in
                     if error != nil {
                         print((error?.localizedDescription)!)
