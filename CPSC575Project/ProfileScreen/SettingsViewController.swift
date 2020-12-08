@@ -5,24 +5,18 @@
 //  Created by Selma Novl on 26/11/20.
 //  Copyright © 2020 bryan lam. All rights reserved.
 //
-import UIKit
+import SwiftUI
 
-class SettingsViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+struct SettingsViewController: View {
     
-
-    /*
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
+    
+    var body: some View {
+        VStack{
+            Text("Settings")
+           
+        }
+        
     }
-    */
-
 }
+
