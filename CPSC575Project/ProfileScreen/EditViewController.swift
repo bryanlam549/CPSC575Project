@@ -7,19 +7,16 @@
 //
 import SwiftUI
 
-class EditButtonViewController: View {
+struct EditViewController: View {
     
+    @Binding var biography : String
     
     var body: some View {
-        VStack{
-            Text("settings")
-            Divider()
-            Button(action: {
-            }, label: {
-                Text("Return to profile view")
-            })
+        NavigationView{
+            VStack(alignment:.leading){
+                TextField("biography", text: $biography)
+            }
         }
-        
     }
     
 }
