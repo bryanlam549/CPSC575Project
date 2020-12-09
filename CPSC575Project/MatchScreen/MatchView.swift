@@ -272,7 +272,7 @@ class observer : ObservableObject{
             
             for i in snap!.documents {
                 let name = i.get("name") as! String
-                let age = "\(i.get("age"))"
+                let age = "\(i.get("age")!)"
                 //let image = i.get("image") as! String
                 var image = i.get("imageUrl1") as! String
                 if image == "" {
